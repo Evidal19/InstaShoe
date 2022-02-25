@@ -5,6 +5,7 @@ const router = require('express').Router();
 // expects /api/users/
 router.get('/', (req, res) => {
     // gets a list of all users
+    res.json({ users: 'Success'});
 });
 
 // expects /api/users/2
@@ -34,4 +35,6 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     let id = req.params.id;
     // delete user based on id
-})
+});
+
+module.exports = router;

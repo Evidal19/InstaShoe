@@ -6,6 +6,7 @@ const router = require('express').Router();
 // expects: http://localhost:3001/api/purchases/
 router.get('/', (req, res) => {
     // Get the purchase history and sell history for all users
+    res.json({ purchases: 'Success'});
 });
 
 // expects: http://localhost:3001/api/purchases/2
@@ -31,7 +32,6 @@ router.put('/:userId/:postId', (req, res) => {
     let postId = req.params.postId;
 
     // update post based on user and post id
-
 });
 
 router.delete('/:userId/:postId', (req, res) => {
@@ -40,4 +40,6 @@ router.delete('/:userId/:postId', (req, res) => {
 
     // delete post based on user and post id
 
-})
+});
+
+module.exports = router;
