@@ -1,16 +1,19 @@
 const router = require('express').Router();
-
+const { User, Post } = require('../../models');
 // expects /api/users/
 
 // expects /api/users/
 router.get('/', (req, res) => {
     // gets a list of all users
-    res.json({ users: 'Success'});
+    User.findAll().then(users => {
+        res.json({ message: 'Success', users });
+    });
+    
 });
 
 // expects /api/users/2
 router.get('/:id', (req, res) => {
-    let id = req.params.id;
+    let userId = req.params.id;
     
     // gets data for a single user
     // probably just their username/email and hashed password
@@ -18,6 +21,19 @@ router.get('/:id', (req, res) => {
     // and display the posts the user has.
     // We could also keep it separate and have this request only get user information for authentication
 
+    User.findOne({
+        where: {
+            id: userId
+        },
+        include: [
+            {
+                model: Post,
+                attributes: ['post_title', 'post_description']
+            }
+        ]
+    }).then(user => {
+        res.json({ message: 'success', user})
+    });
 });
 
 // expects /api/users/

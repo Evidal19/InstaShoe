@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
 router.get('/:id', (req, res) => {
     let userId = req.params.id;
     // Get the purchase and sell history for the user specified
-    Purchase.findAll({
+    Purchase.findOne({
         where: {
             user_id: userId
         }
