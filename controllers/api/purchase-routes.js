@@ -28,29 +28,51 @@ router.get('/:id', (req, res) => {
 
 // expects: http://localhost:3001/api/purchases/2
 // expects JSON
-// ex. { title: "Jordan's", price: 150, description: "These shoes are good" }
+// ex. { purchase_amount: 100, post_id: 4, user_id: 5 }
 // change based on table layout
-router.post('/:id', (req, res) => {
+router.post('/', (req, res) => {
     let id = req.params.id;
 
-    // Create a new post for the user specified by id
+    Purchase.create(
+        {
+            purchase_amount: req.body.purchase_amount,
+            post_id: req.body.post_id,
+            user_id: req.body.user_id
+        }
+    ).then(newPurchase => res.json({ message: 'success', newPurchase }));
+    // Create a new purchase for the user specified by id
 })
 
 // expects: http://localhost:3001/api/purchases/2/10
 // expects similar json to post request
-router.put('/:userId/:postId', (req, res) => {
-    let userId = req.params.userId;
-    let postId = req.params.postId;
+router.put('/:purchaseId', (req, res) => {
+    let purchaseId = req.params.purchaseId;
 
-    // update post based on user and post id
+    Purchase.update({
+        purchase_amount: req.body.purchase_amount,
+        post_id: req.body.post_id,
+        user_id: req.body.user_id
+    },{
+        where: {
+            id: purchaseId
+        }
+    }).then(updatedPurchase => {
+        res.json({ message: 'success', updatedPurchase })
+    })
+    // update purchase information based on purchase id
 });
 
-router.delete('/:userId/:postId', (req, res) => {
-    let userId = req.params.userId;
-    let postId = req.params.postId;
+router.delete('/:purchaseId', (req, res) => {
+    let purchaseId = req.params.purchaseId;
 
-    // delete post based on user and post id
-
+    // delete purchase based on purchase id
+    Purchase.destroy({
+        where: {
+            id: purchaseId
+        }
+    }).then(deletedPurchase => {
+        res.json({ message: 'success', deletedPurchase })
+    })
 });
 
 module.exports = router;
