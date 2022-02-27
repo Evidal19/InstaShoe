@@ -19,7 +19,7 @@ Post.init(
         },
         post_description: { 
             type: DataTypes.STRING,
-            allowNull: false,
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,
