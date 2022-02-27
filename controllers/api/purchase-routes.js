@@ -19,7 +19,7 @@ router.get('/:id', (req, res) => {
     // Get the purchase and sell history for the user specified
     Purchase.findAll({
         where: {
-            id: userId
+            user_id: userId
         }
     }).then(purchases => {
         res.json({ message: 'success', purchases });

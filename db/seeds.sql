@@ -14,9 +14,9 @@ VALUES
     ('title', 'description', 3),
     ('title', 'description', 4);
 
-INSERT INTO purchase (purchase_amount, post_id)
+INSERT INTO purchase (purchase_amount, post_id, user_id)
 VALUES 
-    (100, 1),
-    (120, 2),
-    (300, 3),
-    (400, 5);
+    (100, 1, 1),
+    (120, 2, 1),
+    (300, 3, 2),
+    (400, 5, 4);
