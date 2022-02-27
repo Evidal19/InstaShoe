@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Create Category model
-class Category extends Model {}
+// Create Post model
+class Purchase extends Model {}
 
-// Create fields and columns for Shoe
-Category.init(
+// Create fields and columns for Purchase
+Purchase.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,13 +13,13 @@ Category.init(
             primaryKey: true,
             autoIncrement: true
         },
-        type: { // (e.g. tennis shoes, flip flops)
-            type: DataTypes.STRING,
-            allowNull: false,
+        purchase_amount: {
+            type: DataTypes.DECIMAL,
+            allowNull: false
         },
-        shoe_id: {
+        post_id: {
             type: DataTypes.INTEGER,
-            references:  {model: 'shoe', key: 'id'}
+            references:  {model: 'post', key: 'id'}
         }
     },
     {
@@ -27,8 +27,8 @@ Category.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'category',
+        modelName: 'purchase',
     }
 );
 
-module.exports = Category;
+module.exports = Purchase;

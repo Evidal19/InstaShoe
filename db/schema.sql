@@ -3,3 +3,5 @@ DROP DATABASE IF EXISTS instashoe_db;
 
 -- CREATE DATABASE
 CREATE DATABASE instashoe_db;
+
+USE instashoe_db;

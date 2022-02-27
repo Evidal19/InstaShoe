@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { User, Post, Purchase } = require('../../models');
 // import models here
 
 // uses /api/purchases
@@ -6,13 +7,23 @@ const router = require('express').Router();
 // expects: http://localhost:3001/api/purchases/
 router.get('/', (req, res) => {
     // Get the purchase history and sell history for all users
-    res.json({ purchases: 'Success'});
+    // POSSIBLY MAKE A SEPARATE ROUTE FILE FOR EACH GETTING PURCHASE HISTORY AND SOLD HISTORY
+    Purchase.findAll().then(purchases => {
+        res.json({ message: 'Success', purchases });
+    });
 });
 
 // expects: http://localhost:3001/api/purchases/2
 router.get('/:id', (req, res) => {
-    let id = req.params.id;
+    let userId = req.params.id;
     // Get the purchase and sell history for the user specified
+    Purchase.findAll({
+        where: {
+            id: userId
+        }
+    }).then(purchases => {
+        res.json({ message: 'success', purchases });
+    });
 });
 
 // expects: http://localhost:3001/api/purchases/2

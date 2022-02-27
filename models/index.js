@@ -1,21 +1,10 @@
 const User = require('./User');
-const Shoe = require('./Shoe');
 const Post = require('./Post');
-const Category = require('./Category');
 const Comment = require('./Comment');
+const Purchase = require('./Purchase');
+const Sell = require('./Sell');
 
 // create associations between tables
-
-// link User and Shoe (one-to-many relationship)
-User.hasMany(Shoe, {
-    foreignKey: 'user_id',
-    OnDelete: 'SET NULL'
-});
-
-Shoe.belongsTo(User, {
-    foreignKey: 'user_id',
-    OnDelete: 'SET NULL'
-});
 
 // link User and Post (one-to-many)
 User.hasMany(Post, {
@@ -39,17 +28,6 @@ Comment.belongsTo(User, {
     OnDelete: 'SET NULL'
 });
 
-// link Shoe and Category (one-to-many)
-Shoe.hasMany(Category, {
-    foreignKey: 'shoe_id',
-    OnDelete: 'SET NULL'
-});
-
-Category.belongsTo(Shoe, {
-    foreignKey: 'shoe_id',
-    OnDelete: 'SET NULL'
-});
-
 // link Post and Comment (one-to-many)
 Post.hasMany(Comment, {
     foreignKey: 'post_id',
@@ -61,10 +39,18 @@ Comment.belongsTo(Post, {
     OnDelete: 'SET NULL'
 });
 
+//adding purchase/sell relationships
+Post.hasOne(Purchase, {
+  foreignKey: 'post_id'  
+});
+
+Purchase.belongsTo(Post, {
+    foreignKey: 'post_id'
+});
+
 module.exports = {
     User,
-    Shoe,
     Post,
-    Category,
+    Purchase,
     Comment
 };
