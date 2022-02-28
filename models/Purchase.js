@@ -2,10 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // Create Post model
-class Post extends Model {}
+class Purchase extends Model {}
 
-// Create fields and columns for Post
-Post.init(
+// Create fields and columns for Purchase
+Purchase.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,17 +13,17 @@ Post.init(
             primaryKey: true,
             autoIncrement: true
         },
-        post_title: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        post_description: { 
-            type: DataTypes.STRING,
+        purchase_amount: {
+            type: DataTypes.DECIMAL,
             allowNull: false
+        },
+        post_id: {
+            type: DataTypes.INTEGER,
+            references:  { model: 'post', key: 'id' }
         },
         user_id: {
             type: DataTypes.INTEGER,
-            references:  {model: 'user', key: 'id'}
+            references: { model: 'user', key: 'id' }
         }
     },
     {
@@ -31,8 +31,8 @@ Post.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'post',
+        modelName: 'purchase',
     }
 );
 
-module.exports = Post;
+module.exports = Purchase;
