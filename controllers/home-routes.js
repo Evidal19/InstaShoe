@@ -17,8 +17,8 @@ router.get('/', (req, res) => {
       })
       .then(dbPurchaseData => {
         
-        const purchase_data = dbPurchaseData.map(blog => 
-          blog.get({ plain: true })
+        const purchase_data = dbPurchaseData.map(purchase => 
+          purchase.get({ plain: true })
         );
   
         console.log(purchase_data);
