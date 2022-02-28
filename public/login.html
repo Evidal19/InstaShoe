@@ -1,23 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/static/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>InstaShoe</title>
-</head>
-<body>
+  </head>
+  <body>
+    <header>
+        <div class="topnav">
+            <a href="#home" class="active">Logo</a>
+            <!-- Navigation links (hidden by default) -->
+            <div id="myLinks">
+              <a href="#news">News</a>
+              <a href="#contact">Contact</a>
+              <a href="#about">About</a>
+            </div>
+
+      <!-- <div class="logo-login center black white-text">InstaShoe</div> -->
+    </header>
     <section>
-        <div class="login-container">
-            <form action="#">
-                <ul>
-                    <label for="username">Enter username:</label>
-                    <input type="text" id="username" name="username" ><br><br>
-                    <label for="password">Enter password:</label>
-                    <input type="text" id="password" name="password" ><br><br>
-                </ul>
-            </form>
-        </div>
+      <div class="login-container">
+        <form action="#">
+          <ul>
+            <label for="username">Enter username:</label>
+            <input type="text" id="username" name="username" /><br /><br />
+            <label for="password">Enter password:</label>
+            <input type="text" id="password" name="password" /><br /><br />
+          </ul>
+        </form>
+      </div>
     </section>
-</body>
+  </body>
 </html>
