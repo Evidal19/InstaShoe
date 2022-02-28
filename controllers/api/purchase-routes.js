@@ -82,6 +82,7 @@ router.delete('/:purchaseId', (req, res) => {
     }).then(deletedPurchase => {
         if (!deletedPurchase) {
             res.status(404).json({ message: 'No purchase found with that id'})
+            return;
         }
         res.json({ message: 'success', deletedPurchase })
     })

@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
     // gets a list of all users
     User.findAll().then(users => {
         res.json({ message: 'Success', users });
-    });
+    }).catch( err => res.status(500).json(err));
     
 });
 
@@ -32,8 +32,12 @@ router.get('/:id', (req, res) => {
             }
         ]
     }).then(user => {
+        if (!user) {
+            res.status(404).json({message: 'No user found with that id'});
+            return;
+        }
         res.json({ message: 'success', user})
-    });
+    }).catch( err => res.status(500).json(err));
 });
 
 // expects /api/users/
@@ -45,7 +49,7 @@ router.post('/', (req, res) => {
         password: req.body.password
     }).then(user => {
         res.json({message: 'success', user});
-    });
+    }).catch(err => res.status(500).json(err));
 });
 
 // expects /api/users/2
@@ -61,8 +65,12 @@ router.put('/:id', (req, res) => {
             id: userId
         }
     }).then(updatedUser => {
+        if (!updatedUser) {
+            res.status(404).json({message: 'No user found with that id'});
+            return;
+        }
         res.json({message: 'success', updatedUser});
-    });
+    }).catch( err => res.status(500).json(err));
 });
 
 // expects /api/users/2
@@ -74,8 +82,12 @@ router.delete('/:id', (req, res) => {
             id: userId
         }
     }).then(deletedUser => {
+        if (!deletedUser) {
+            res.status(404).json({message: 'No user found with that id'});
+            return;
+        }
         res.json({ message: 'success', deletedUser});
-    });
+    }).catch( err => res.status(500).json(err));
 });
 
 module.exports = router;
