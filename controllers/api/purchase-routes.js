@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { response } = require('express');
 const { User, Post, Purchase } = require('../../models');
 // import models here
 
@@ -10,7 +11,7 @@ router.get('/', (req, res) => {
     // POSSIBLY MAKE A SEPARATE ROUTE FILE FOR EACH GETTING PURCHASE HISTORY AND SOLD HISTORY
     Purchase.findAll().then(purchases => {
         res.json({ message: 'Success', purchases });
-    });
+    }).catch(err => res.status(500).json(err))
 });
 
 // expects: http://localhost:3001/api/purchases/2
@@ -22,8 +23,13 @@ router.get('/:id', (req, res) => {
             user_id: userId
         }
     }).then(purchases => {
+        if (!purchases) {
+            res.status(404).json({message: 'No purchase found with that id',});
+            return;
+        }
         res.json({ message: 'success', purchases });
-    });
+
+    }).catch(err => res.status(500).json(err));
 });
 
 // expects: http://localhost:3001/api/purchases/2
@@ -31,16 +37,15 @@ router.get('/:id', (req, res) => {
 // ex. { purchase_amount: 100, post_id: 4, user_id: 5 }
 // change based on table layout
 router.post('/', (req, res) => {
-    let id = req.params.id;
-
+    // Create a new purchase 
     Purchase.create(
         {
             purchase_amount: req.body.purchase_amount,
             post_id: req.body.post_id,
             user_id: req.body.user_id
         }
-    ).then(newPurchase => res.json({ message: 'success', newPurchase }));
-    // Create a new purchase for the user specified by id
+    ).then(newPurchase => res.json({ message: 'success', newPurchase }))
+    .catch(err => res.status(500).json(err))
 })
 
 // expects: http://localhost:3001/api/purchases/2/10
@@ -48,6 +53,7 @@ router.post('/', (req, res) => {
 router.put('/:purchaseId', (req, res) => {
     let purchaseId = req.params.purchaseId;
 
+    // update purchase information based on purchase id
     Purchase.update({
         purchase_amount: req.body.purchase_amount,
         post_id: req.body.post_id,
@@ -57,9 +63,12 @@ router.put('/:purchaseId', (req, res) => {
             id: purchaseId
         }
     }).then(updatedPurchase => {
+        if (!updatedPurchase) {
+            res.status(404).json({ message: 'No purchase found with that id'});
+            return;
+        }
         res.json({ message: 'success', updatedPurchase })
-    })
-    // update purchase information based on purchase id
+    }).catch(err => res.status(500).json(err));    
 });
 
 router.delete('/:purchaseId', (req, res) => {
@@ -71,6 +80,9 @@ router.delete('/:purchaseId', (req, res) => {
             id: purchaseId
         }
     }).then(deletedPurchase => {
+        if (!deletedPurchase) {
+            res.status(404).json({ message: 'No purchase found with that id'})
+        }
         res.json({ message: 'success', deletedPurchase })
     })
 });
