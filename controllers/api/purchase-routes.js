@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { response } = require('express');
 const { User, Post, Purchase } = require('../../models');
 // import models here
 
