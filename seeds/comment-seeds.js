@@ -34,7 +34,7 @@ const commentdata = [
         post_id: 5
     },
     {
-        comment_text: 'Bro only $5? For realz? What a steal',
+        comment_text: 'Only $5? For realz? What a steal',
         user_id: 9,
         post_id: 2
     }
