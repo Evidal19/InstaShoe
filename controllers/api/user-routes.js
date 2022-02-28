@@ -39,18 +39,43 @@ router.get('/:id', (req, res) => {
 // expects /api/users/
 router.post('/', (req, res) => {
     // create a new user, will take a username/email and hashed password
+    User.create({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+    }).then(user => {
+        res.json({message: 'success', user});
+    });
 });
 
 // expects /api/users/2
 router.put('/:id', (req, res) => {
-    let id = req.params.id;
+    let userId = req.params.id;
     // update user info like changning username/email or password 
+    User.update({
+        username: req.body.username,
+        email: req.body.email,
+        password: req.body.password
+    },{
+        where: {
+            id: userId
+        }
+    }).then(updatedUser => {
+        res.json({message: 'success', updatedUser});
+    });
 });
 
 // expects /api/users/2
 router.delete('/:id', (req, res) => {
-    let id = req.params.id;
+    let userId = req.params.id;
     // delete user based on id
+    User.destroy({
+        where: {
+            id: userId
+        }
+    }).then(deletedUser => {
+        res.json({ message: 'success', deletedUser});
+    });
 });
 
 module.exports = router;
