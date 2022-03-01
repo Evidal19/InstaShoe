@@ -48,6 +48,14 @@ Purchase.belongsTo(Post, {
     foreignKey: 'post_id'
 });
 
+User.hasMany(Purchase, {
+    foreignKey: 'user_id'
+});
+
+Purchase.belongsTo(User, {
+    foreignKey: 'user_id'
+});
+
 module.exports = {
     User,
     Post,

@@ -2,18 +2,16 @@ const router = require('express').Router();
 const { User, Post, Purchase } = require('../models');
 
 // get homepage to render
-router.get('/', (req, res) => {
+router.get('/home', (req, res) => {
     // res.render('../public/img-upload.html')
     console.log('---- GETTING PURCHASES ----');
-    User.findAll({
+    Purchase.findAll({
         attributes: { exclude: ['password'] },
         include: {
-            model: Post,
-            attributes: ['post_title', 'post_description']
+            model: Post
           },
         include: {
-          model: Purchase,
-          attributes: ['purchase_amount']
+          model: User
         }
       })
       .then(dbPurchaseData => {
@@ -36,8 +34,7 @@ router.get('/', (req, res) => {
 
 // get login page to render
 router.get('/login', (req, res) => {
-  console.log("Hello login");
-  res.render('login');
+    res.render('login');
 });
   
 module.exports = router;
