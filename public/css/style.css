@@ -92,6 +92,7 @@ h2 {
   top: 0;
   width: 22%;
   right: 10px;
+  color: white;
 }
 
 #search_icon_click {
@@ -112,15 +113,18 @@ h2 {
   left: 15px;
   z-index: 5;
 }
-.submit-btn{
+button{
   color: cornsilk;
   background-color: black;
   border-radius: 12px;
   box-shadow: 0 12px 16px 0 rgba(119, 114, 114, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  width: 670px;
+  width: 650px;
   cursor: pointer;
   margin: 20px;
   
+}
+button:focus{
+  background-color: cornflowerblue;
 }
 
 #pic-4{
@@ -131,4 +135,124 @@ h2 {
   border-radius: 12px;
   width: 20px;
 
+}
+
+#profile-img{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 0px 20px 0px;
+}
+
+#profile-picture{
+  height: 500px;
+  padding-top:16%;
+}
+
+.profile-selling-img{
+  display: flex;
+  flex-direction: row;
+  line-height: 15px;
+  width: 100%;
+  padding: 20px 0px 35px 0px;
+}
+
+#available-shoes{
+  height: 700px;
+  width: 900px;
+
+}
+
+#nude-shoe{
+padding: 140px 0px 10px 40px;
+
+}
+
+#nude-shoe p{
+  padding: 53px 0px 20px 120px;
+  font-weight: 900;
+
+}
+
+.img-info-text{
+  padding-bottom: 10%;
+}
+
+#line{
+  text-align: center;
+  text-decoration-color: black;
+  font-weight: 900;
+  border: 7px solid black;
+  
+}
+
+#line-2{
+  text-align: center;
+  text-decoration-color: black;
+  font-weight: 900;
+  border: 7px solid black;
+  
+}
+
+#shoes-sold-1{
+  padding: 20px 20px 20px 20px;
+  height: 664px;
+  width: 565px;
+}
+
+#shoes-sold-2{
+  height: 661px;
+  padding: 20px 20px 20px 20px;
+}
+
+.profile-selling-img{
+  padding: 3px 10px 5px 101px;
+}
+
+.login-container{
+  padding: 279px 290px 35px 290px;
+}
+
+#button-login{
+  color: cornsilk;
+  background-color: black;
+  border-radius: 12px;
+  box-shadow: 0 12px 16px 0 rgb(119 114 114 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+  width: 206px;
+  cursor: pointer;
+  margin: 13px;
+  align-items: center;
+}
+.comments-container{
+  padding: 500px 30px 30px 155px;
+}
+
+#comments{
+  height: 14rem;
+  font-size: 2rem;
+  width: 75rem;
+}
+
+/* #box{
+  /* width: 300px;
+  /* height: 100px; */
+  /* padding: 300px 30px 30px 155px;
+  border: 1px solid blue;
+  box-sizing: border-box;
+} */ 
+
+.mutual-convo{
+  max-width: 640px;
+	margin: 30px auto;
+	background: #fff;
+	border-radius: 8px;
+	padding: 20px;
+  min-height: 0px;
+	border: 1px solid #eee;
+	border-radius: 5px;
+	padding: 5px 10px
+}
+
+#post-img{
+  padding: 300px 30px 30px 475px;
 }

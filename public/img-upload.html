@@ -1,17 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Upload Image</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-      </head>
-      <body>
-        <h1>Upload Image</h1>
-        <form method="POST" action="/api/images" enctype="multipart/form-data" >
-          <input type="file" name="image" accept='image/*' >
-          <input type="submit" value="Upload">
-        </form>  
+  <head>
+    <title>Upload Image</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Merriweather|Solway&display=swap"
+    rel="stylesheet"
+  />
+  <link href="./css/style.css" rel="stylesheet" />
+    <title>InstaShoe</title>
+  </head>
+  </head>
+  <body>
+    <title>InstaShoe</title>
+  </head>
 
-        <img src="/api/images/1f24019a32f368e289975a5098377694" alt="">
-      </body>
+  <body>
+    <header>
+      <div class="nav-wrapper">
+        <a
+          href="#"
+          data-target="mobile-demo"
+          class="sidenav-trigger show-on-large"
+          ><i class="material-icons white-text">menu</i></a
+        >
+      <div id="top-logo" class="logo center black white-text">InstaShoe</div>
+    </header>
+     <div id="post-img">
+
+    
+    <h1>Upload Image</h1>
+    <form method="POST" action="/api/images" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" />
+      <input type="submit" value="Upload" />
+    </form>
+
+    <img src="/api/images/1f24019a32f368e289975a5098377694" alt="" />
+  </div>
+  </body>
 </html>
