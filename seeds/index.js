@@ -21,6 +21,7 @@ const seedAll = async () => {
 
   await seedPurchases();
   console.log('\n----- PURCHASES SEEDED -----\n');
+  
   process.exit(0);
 };
 

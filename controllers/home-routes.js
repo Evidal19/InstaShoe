@@ -1,20 +1,34 @@
 const router = require('express').Router();
+const sequelize = require('../config/connection')
 const { User, Post, Purchase } = require('../models');
 
 // get homepage to render
 router.get('/home', (req, res) => {
     // res.render('../public/img-upload.html')
     console.log('---- GETTING PURCHASES ----');
-    Purchase.findAll({
-        attributes: { exclude: ['password'] },
-        include: {
-            model: Post
-          },
-        include: {
-          model: User
+    Post.findAll({
+      attributes: [
+        'id',
+        'post_title',
+        'post_description',
+        'created_at',
+        [sequelize.literal('(SELECT COUNT(*) FROM purchase WHERE post.id = purchase.post.id)'), 'purchased_posts']
+      ],
+      include: [
+        {
+          model: Purchase,
+          include: {
+            model: User
+          }
+        },
+        {
+          include: {
+            model: User
+          }
         }
-      })
-      .then(dbPurchaseData => {
+      ]
+    })
+    .then(dbPurchaseData => {
         
         const purchase_data = dbPurchaseData.map(purchase => 
           purchase.get({ plain: true })
