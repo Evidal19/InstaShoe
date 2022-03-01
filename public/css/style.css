@@ -121,7 +121,6 @@ button{
   width: 650px;
   cursor: pointer;
   margin: 20px;
-  
 }
 button:focus{
   background-color: cornflowerblue;
