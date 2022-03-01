@@ -6,27 +6,10 @@ const { User, Post, Purchase } = require('../models');
 router.get('/home', (req, res) => {
     // res.render('../public/img-upload.html')
     console.log('---- GETTING PURCHASES ----');
-    Post.findAll({
-      attributes: [
-        'id',
-        'post_title',
-        'post_description',
-        'created_at',
-        [sequelize.literal('(SELECT COUNT(*) FROM purchase WHERE post.id = purchase.post.id)'), 'purchased_posts']
-      ],
-      include: [
-        {
-          model: Purchase,
-          include: {
-            model: User
-          }
-        },
-        {
-          include: {
-            model: User
-          }
-        }
-      ]
+    Purchase.findAll({
+      include: {
+        model: Post
+      }
     })
     .then(dbPurchaseData => {
         
