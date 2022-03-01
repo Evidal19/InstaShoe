@@ -1,0 +1,75 @@
+{{!-- display homepage --}}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather|Solway&display=swap"
+      rel="stylesheet"
+    />
+    <link href="../static/style.css" rel="stylesheet" />
+    <link href="../img/" rel="pictures"/>
+    <link href="../img/main picture.jpeg"  rel="img"/>
+    <link href="../img/new-main.jpeg"  rel="header"/>
+    <link href="../img/pic 1.jpeg"  rel="pic1"/>
+    <link href="../img/pic 2.jpeg"  rel="pic2"/>
+    <link href="../img/pic 3.jpeg" rel="pic3" />
+    <link href="../img/pic 4.jpeg" rel="pic4" />
+    <link href="../img/pic 5.jpeg" rel="pic5" />
+    <link href="../img/pic 6.jpeg" rel="pic6" />
+    <link href="../img/pic 7.jpeg"  rel="pic7"/>
+
+    <title>InstaShoe</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="nav-wrapper">
+        <a
+          href="#"
+          data-target="mobile-demo"
+          class="sidenav-trigger show-on-large"
+          ><i class="material-icons white-text">menu</i></a
+        >
+        <div id="top-logo" class="logo center black white-text">InstaShoe</div>
+        <input
+          id="searchbar_input"
+          name="searchbar_input"
+          type="text"
+          placeholder="Search"
+          class="col s9 offset-s1"
+        />
+        <i class="material-icons white-text search_icon" id="search_icon_click"
+          >search</i
+        >
+      </div>
+      <div id="top-shoe" class="first shoe">
+        <img
+          class="header-img"
+          alt="picture of Nike sneaker shoe"
+          src="../img/new-main.jpeg"
+        />
+      </div>
+    </header>
+    <section id="post" class="compare">
+        {{{body}}}
+    </section>
+
+    <footer>
+      <h4></h4>
+    </footer>
+    <script src="/static/homepage.js"></script>
+  </body>
+
+  <script></script>
+</html>
