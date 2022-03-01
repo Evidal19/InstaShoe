@@ -4,6 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Merriweather|Solway&display=swap"
+    rel="stylesheet"
+  />
+  <link href="./css/style.css" rel="stylesheet" />
     <title>InstaShoe</title>
   </head>
 
@@ -26,33 +39,62 @@
             class="col s9 offset-s1"
           />
           <i class="material-icons white-text search_icon" id="search_icon_click"
-            >search</i
-          >
-
-
-
-
+            >search</i>
     </header>
-    <section id="post" class="compare">
-    <form id="first-img" class="body-img" action="#">
-      <div class="body-sections-img">
+    <section id="profile" class="dashboard">
+    <form id="profile-img" class="profile-start" action="#">
+      <div class="profile-sections-img">
         <img
-          id="proffile-pic"
-          src=""
-          alt=""
+          id="profile-picture"
+          src="/public/images/profile-img.jpeg"
+          alt="Picture of a young women"
         />
       </div>
       <div class="img-info-description">
         <p class="img-info-text">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text
-          ever since the 1500s, when an unknown printer took a galley of type
-          and scrambled it to make a type specimen book. It has survived not
-          only five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged.
-        </p>
-      
+          HI THERE! I am a 22 year old photographer in the fashion industry. My guilty pleasure is spending all my money on shoes. One of the perks in my job field is receiving new items. I receive MANY free shoe samples at my photo-shots. This tends to feed my shoe addiction, because I use InstaShoe to sell those NEW shoes. Then buy more shoes on here, it is a vicious cycle, BUT I LIVE FOR IT!
+      </p>
+      </div>
     </form>
+    <form id="items-for-sell" class="available-items" action="#">
+      <p id="line"> 
+        AVAILABLE SHOES
+      </p>
+      <div class="profile-selling-img">
+        <img
+          id="available-shoes"
+          src="/public/images/profile3.jpeg"
+          alt="Picture of nude flat shoes for women"
+        />
+         <div id="nude-shoe" class="available-shoe">
+           <p>
+             Never been worn H&M shoes in size 7 for women.</br>
+             Shoe is a light nude, almost off white color with ajustable strap.</br>
+             I am selling for only $15.
+           </p>
+           <button type="button" onclick="('going to comment page')">comment</button>
+
+          </div>
+      </div>  
+    </form>
+     <form>
+      <form id="items-sold" class="items-sold" action="#">
+        <p id="line-2"> 
+          SOLD HISTORY
+        </p>
+        <div class="profile-selling-img">
+          <img
+            id="shoes-sold-1"
+            src="/public/images/profile2.jpeg"
+            alt="Picture of royale blue heel with bold flower patern"
+          />
+          <div class="profile-selling-img">
+            <img
+              id="shoes-sold-2"
+              src="/public/images/profile1.jpeg"
+              alt="Picture of nude bedazzle heels"
+            />
+     </form>
     </body>
 
 </section>
