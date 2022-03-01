@@ -4,6 +4,7 @@ const { User, Post, Purchase } = require('../models');
 
 // get homepage to render
 router.get('/home', (req, res) => {
+    console.log(req.session);
     // res.render('../public/img-upload.html')
     console.log('---- GETTING PURCHASES ----');
     Purchase.findAll({
@@ -35,7 +36,11 @@ router.get('/home', (req, res) => {
 
 // get login page to render
 router.get('/login', (req, res) => {
-    res.render('login');
+  if (req.session.loggedIn) {
+    res.redirect('/home');
+    return;
+  }
+  res.render('login');
 });
 
 // get sign-up page to render
