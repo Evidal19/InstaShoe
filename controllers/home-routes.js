@@ -8,11 +8,11 @@ router.get('/', (req, res) => {
         attributes: { exclude: ['password'] },
         include: {
             model: Post,
-            attributes: ['username']
+            attributes: ['']
           },
         include: {
           model: User,
-          attributes: ['username']
+          attributes: ['']
         }
       })
       .then(dbPurchaseData => {
