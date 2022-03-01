@@ -8,7 +8,11 @@ router.get('/home', (req, res) => {
     console.log('---- GETTING PURCHASES ----');
     Purchase.findAll({
       include: {
-        model: Post
+        model: User // User varibales FAIL to appear, even if I embedded include for User inside of Post, or
+                    // use the sequelize method
+      },
+      include: {
+        model: Post // Post variables appear in console.log
       }
     })
     .then(dbPurchaseData => {
