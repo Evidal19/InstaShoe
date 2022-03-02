@@ -2,7 +2,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Purchase = require('./Purchase');
-const Sell = require('./Sell');
+const Image = require('./Image');
 
 // create associations between tables
 
@@ -82,9 +82,18 @@ Purchase.belongsTo(User, {
     onDelete: 'SET NULL'
 });
 
+Post.hasOne(Image, {
+    foreignKey : 'img_src'
+});
+
+Image.belongsTo(Post, {
+    foreignKey: 'img_src'
+});
+
 module.exports = {
     User,
     Post,
     Purchase,
-    Comment
+    Comment,
+    Image
 };
