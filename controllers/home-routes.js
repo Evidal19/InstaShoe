@@ -1,27 +1,25 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection')
+const sequelize = require('../config/connection');
 const { User, Post, Purchase } = require('../models');
 
 // get homepage to render
 router.get('/home', (req, res) => {
+    console.log(req.session);
     // res.render('../public/img-upload.html')
     console.log('---- GETTING PURCHASES ----');
     Purchase.findAll({
-      include: {
-        model: User // User varibales FAIL to appear, even if I embedded include for User inside of Post, or
-                    // use the sequelize method
+      include: [{
+        model: User
       },
-      include: {
-        model: Post // Post variables appear in console.log
-      }
+      {
+        model: Post
+      }]
     })
     .then(dbPurchaseData => {
         
         const purchase_data = dbPurchaseData.map(purchase => 
           purchase.get({ plain: true })
         );
-  
-        console.log(purchase_data);
   
         res.render('homepage', {
           purchase_data,
@@ -35,7 +33,17 @@ router.get('/home', (req, res) => {
 
 // get login page to render
 router.get('/login', (req, res) => {
-    res.render('login');
+  console.log(req.session.loggedIn);
+  if (req.session.loggedIn) {
+    res.redirect('/home');
+    return;
+  }
+  res.render('login');
 });
-  
+
+// get sign-up page to render
+router.get('/register', (req, res) => {
+  res.render('register');
+});
+
 module.exports = router;

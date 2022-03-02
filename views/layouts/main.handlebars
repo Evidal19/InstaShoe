@@ -16,17 +16,28 @@
 
 <body>
   <header>
+
     <div class="nav-wrapper">
       <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i
-          class="material-icons white-text">menu</i></a>
-      <div id="top-logo" class="logo center black white-text">InstaShoe</div>
-      <input id="searchbar_input" name="searchbar_input" type="text" placeholder="Search" class="col s9 offset-s1" />
-      <i class="material-icons white-text search_icon" id="search_icon_click">search</i>
+        class="material-icons white-text">menu</i></a>
+      <div id="top-logo" class="logo center black white-text">InstaShoe
+        {{#if loggedIn}}
+          <button id="logout" class="btn-no-style">logout</button>
+        {{else}}
+          <a href="/login" class="login-nav">login</a>
+        {{/if}}
+      </div>
     </div>
+
+    <input id="searchbar_input" name="searchbar_input" type="text" placeholder="Search" class="col s9 offset-s1" />
+    <i class="material-icons white-text search_icon" id="search_icon_click">search</i>
+
     <div id="top-shoe" class="first shoe">
-      <img class="header-img" alt="picture of Nike sneaker shoe" src="./images/new-main.jpeg" />
+        <img class="header-img" alt="picture of Nike sneaker shoe" src="./images/new-main.jpeg" />
     </div>
+
   </header>
+
   <section id="post" class="compare">
     <!-- BODY INSERTED HERE -->
     {{{body}}}
@@ -35,7 +46,9 @@
   <footer>
     <h4></h4>
   </footer>
-  <script src="/static/homepage.js"></script>
+
+  <script src="./javascript/login.js"></script>
+  <script src="/javascript/logout.js"></script>
 </body>
 
 <script></script>

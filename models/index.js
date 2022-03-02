@@ -2,7 +2,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Purchase = require('./Purchase');
-const Sell = require('./Sell');
+const Image = require('./Image');
 
 // create associations between tables
 
@@ -16,27 +16,6 @@ Post.belongsTo(User, {
     foreignKey: 'user_id',
     OnDelete: 'SET NULL'
 });
-
-// link User and Post through Purchases
-User.belongsToMany(Post, {
-    through: Purchase,
-    as: 'purchased_posts',
-
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
-});
-
-Post.belongsToMany(User, {
-    through: Purchase,
-    as: 'purchased_posts',
-
-    foreignKey: 'post_id',
-    onDelete: 'SET NULL'
-});
-
-// See if this (above) works for Purchase.findAll in home-routes; if not, delete
-
-// link Purchase to User and Vote
 
 // link User and Comment (one-to-many)
 User.hasMany(Comment, {
@@ -82,9 +61,18 @@ Purchase.belongsTo(User, {
     onDelete: 'SET NULL'
 });
 
+Post.hasOne(Image, {
+    foreignKey : 'img_src'
+});
+
+Image.belongsTo(Post, {
+    foreignKey: 'img_src'
+});
+
 module.exports = {
     User,
     Post,
     Purchase,
-    Comment
+    Comment,
+    Image
 };

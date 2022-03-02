@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const path = require('path');
 const { uploadFile, getFileStream } = require('../../s3');
+const { Image } = require('../../models');
 
 const fs = require('fs');
 const util = require('util');
@@ -22,12 +23,20 @@ const upload = multer({ dest: '../../public/assets/images'});
 //     storage: storage
 //   });
 
+router.get('/', (req, res) => {
+    Image.findAll().then(images => {
+        console.log("images" + images);
+        res.json(images);
+    });
+});
+
+//display image
 router.get('/:key', (req, res) => {
     const key = req.params.key;
     const readStream = getFileStream(key);
 
     readStream.pipe(res);
-})
+});
 
 // /api/images
 // Multer handles the images that are received by the server ( make sure the name of the input is the same as upload.single('image'))
@@ -44,6 +53,9 @@ router.post("/", upload.single('image'), async (req, res) => {
         const result = await uploadFile(file);
         await unlinkFile(file.path);
         console.log(result);
+        Image.create({
+            file_src: result.key
+        });
         res.send({imagePath: `/images/${result.key}`});
     }
 });

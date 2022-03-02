@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Comment extends Model {}
+class Image extends Model {}
 
 Image.init(
     {
@@ -13,6 +13,10 @@ Image.init(
         },
         file_src: { 
             type: DataTypes.STRING
+        },
+        post_id: {
+            type: DataTypes.INTEGER,
+            references: {model: 'post', key: 'id'}
         }
     },
     {
@@ -20,7 +24,7 @@ Image.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'comment',
+        modelName: 'image',
     }
 );
 

@@ -7,13 +7,11 @@
 
     <div class="img-info-description">
         <p class="img-info-text">
-            {{user.username}}<br></br>
-            {{post.post_title}} {{post.post_description}}<br></br>
-            Amount: {{purchase.purchase_amount}}
+            <span style="font-weight: bold; font-size: 20px">{{user.username}}</span><br></br>
+            <span style="font-weight: bold">{{post.post_title}}</span> {{post.post_description}}<br></br>
+            <span style="font-weight: bold">Amount: </span>${{purchase.purchase_amount}}
         </p>
-        <textarea name="comments" id="comments" style="font-family:sans-serif;font-size:1em;">
-        </textarea>
-        <input class="submit-btn" type="submit" name="fourth-shoe-pic" id="second-sneaker-pic" />
+        <button type="button" onclick="('going to comment page')" id="comment-button">comment</button>
     </div>
 </form>
 {{/each}}
