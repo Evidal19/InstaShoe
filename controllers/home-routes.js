@@ -8,13 +8,12 @@ router.get('/home', (req, res) => {
     // res.render('../public/img-upload.html')
     console.log('---- GETTING PURCHASES ----');
     Purchase.findAll({
-      include: {
-        model: User // User varibales FAIL to appear, even if I embedded include for User inside of Post, or
-                    // use the sequelize method
+      include: [{
+        model: User
       },
-      include: {
-        model: Post // Post variables appear in console.log
-      }
+      {
+        model: Post
+      }]
     })
     .then(dbPurchaseData => {
         
