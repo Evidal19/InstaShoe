@@ -50,4 +50,8 @@ router.get('/post-upload', (req, res) => {
   res.render('post');
 });
 
+router.get('/dashboard', (req, res) => {
+  res.render('dashboard');
+});
+
 module.exports = router;
