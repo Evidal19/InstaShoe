@@ -44,7 +44,7 @@ h2 {
 }
 
 #first-img {
-  padding-top: 10%;
+  padding-top: 5%;
 }
 
 .body-img {
@@ -101,7 +101,7 @@ h2 {
   right: 0;
 }
 
-#top-logo{
+#top-logo {
   position: absolute;
   top: 0;
   width: 100%;
@@ -113,43 +113,42 @@ h2 {
   left: 15px;
   z-index: 5;
 }
-button{
+#btn-one {
   color: cornsilk;
   background-color: black;
   border-radius: 12px;
-  box-shadow: 0 12px 16px 0 rgba(119, 114, 114, 0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(119, 114, 114, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
   width: 650px;
   cursor: pointer;
   margin: 20px;
-  
 }
-button:focus{
+button:focus {
   background-color: cornflowerblue;
 }
 
-#pic-4{
+#pic-4 {
   width: 568px;
 }
 
-.comments{
+.comments {
   border-radius: 12px;
   width: 20px;
-
 }
 
-#profile-img{
+#profile-img {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px 0px 20px 0px;
 }
 
-#profile-picture{
+#profile-picture {
   height: 500px;
-  padding-top:16%;
+  padding-top: 16%;
 }
 
-.profile-selling-img{
+.profile-selling-img {
   display: flex;
   flex-direction: row;
   line-height: 15px;
@@ -157,102 +156,96 @@ button:focus{
   padding: 20px 0px 35px 0px;
 }
 
-#available-shoes{
+#available-shoes {
   height: 700px;
   width: 900px;
-
 }
 
-#nude-shoe{
-padding: 140px 0px 10px 40px;
-
+#nude-shoe {
+  padding: 140px 0px 10px 40px;
 }
 
-#nude-shoe p{
+#nude-shoe p {
   padding: 53px 0px 20px 120px;
   font-weight: 900;
-
 }
 
-.img-info-text{
-  padding-bottom: 10%;
+.img-info-text {
+  padding-bottom: 2%;
 }
 
-#line{
+#line {
   text-align: center;
   text-decoration-color: black;
   font-weight: 900;
   border: 7px solid black;
-  
 }
 
-#line-2{
+#line-2 {
   text-align: center;
   text-decoration-color: black;
   font-weight: 900;
   border: 7px solid black;
-  
 }
 
-#shoes-sold-1{
+#shoes-sold-1 {
   padding: 20px 20px 20px 20px;
   height: 664px;
   width: 565px;
 }
 
-#shoes-sold-2{
+#shoes-sold-2 {
   height: 661px;
   padding: 20px 20px 20px 20px;
 }
 
-.profile-selling-img{
+.profile-selling-img {
   padding: 3px 10px 5px 101px;
 }
 
-.login-container{
+.login-container {
   padding: 279px 290px 35px 290px;
 }
 
-#button-login{
+#button-login {
   color: cornsilk;
   background-color: black;
   border-radius: 12px;
-  box-shadow: 0 12px 16px 0 rgb(119 114 114 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+  box-shadow: 0 12px 16px 0 rgb(119 114 114 / 24%),
+    0 17px 50px 0 rgb(0 0 0 / 19%);
   width: 206px;
   cursor: pointer;
   margin: 13px;
   align-items: center;
 }
-.comments-container{
-  padding: 500px 30px 30px 155px;
+.comments-container {
+  padding: 100px 30px 30px 155px;
+  align-items: center;
 }
 
-#comments{
+#comments {
   height: 14rem;
   font-size: 2rem;
-  width: 75rem;
+  width: 70rem;
 }
 
-/* #box{
-  /* width: 300px;
-  /* height: 100px; */
-  /* padding: 300px 30px 30px 155px;
-  border: 1px solid blue;
-  box-sizing: border-box;
-} */ 
-
-.mutual-convo{
-  max-width: 640px;
-	margin: 30px auto;
-	background: #fff;
-	border-radius: 8px;
-	padding: 20px;
-  min-height: 0px;
-	border: 1px solid #eee;
-	border-radius: 5px;
-	padding: 5px 10px
+.mutual-convo {
+  max-width: 817px;
+  margin: 23px auto;
+  /* background: ; */
+  border-radius: 8px;
+  padding: 20px;
+  min-height: 98px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border-style: solid;
+  border-color: black;
 }
 
-#post-img{
+#post-img {
   padding: 300px 30px 30px 475px;
+}
+
+.comment-section{
+  background-color: whitesmoke;
 }
