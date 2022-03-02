@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection')
+const sequelize = require('../config/connection');
 const { User, Post, Purchase } = require('../models');
 
 // get homepage to render
@@ -35,6 +35,7 @@ router.get('/home', (req, res) => {
 
 // get login page to render
 router.get('/login', (req, res) => {
+  console.log(req.session.loggedIn);
   if (req.session.loggedIn) {
     res.redirect('/home');
     return;
