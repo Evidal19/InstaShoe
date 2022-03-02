@@ -51,5 +51,5 @@ async function loginFormHandler(event) {
     }
 }
   
-//document.querySelector('#button-sign-up').addEventListener('submit', signupFormHandler);
+// document.querySelector('#button-sign-up').addEventListener('click', signupFormHandler);
 document.querySelector('#button-login').addEventListener('click', loginFormHandler);

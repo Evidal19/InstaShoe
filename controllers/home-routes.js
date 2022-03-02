@@ -21,8 +21,6 @@ router.get('/home', (req, res) => {
           purchase.get({ plain: true })
         );
   
-        console.log(purchase_data);
-  
         res.render('homepage', {
           purchase_data,
         });

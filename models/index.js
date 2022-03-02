@@ -17,27 +17,6 @@ Post.belongsTo(User, {
     OnDelete: 'SET NULL'
 });
 
-// link User and Post through Purchases
-User.belongsToMany(Post, {
-    through: Purchase,
-    as: 'purchased_posts',
-
-    foreignKey: 'user_id',
-    onDelete: 'SET NULL'
-});
-
-Post.belongsToMany(User, {
-    through: Purchase,
-    as: 'purchased_posts',
-
-    foreignKey: 'post_id',
-    onDelete: 'SET NULL'
-});
-
-// See if this (above) works for Purchase.findAll in home-routes; if not, delete
-
-// link Purchase to User and Vote
-
 // link User and Comment (one-to-many)
 User.hasMany(Comment, {
     foreignKey: 'user_id',
