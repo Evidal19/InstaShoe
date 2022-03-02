@@ -62,11 +62,12 @@ router.post('/', upload.single('image'), async (req, res) => {
         const result = await uploadFile(file);
         await unlinkFile(file.path);
 
+        console.log('user-id ' + req.session.user_id);
         Post.create({
             post_title: req.body.post_title,
             post_description: req.body.post_description,
             file_src: result.Key,
-            user_id: req.body.user_id
+            user_id: req.session.user_id
         }).then(newPost => {
             if (!newPost) {
                 res.status(404).json({message: 'Post needs post_title, post_description, file_src and user_id'});
