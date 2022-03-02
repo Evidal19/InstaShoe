@@ -24,6 +24,11 @@ h2 {
 
 #comments {
   color: black;
+  margin-left: -235px;
+}
+
+#comment-button {
+  margin-left: -3px;
 }
 
 #post {
