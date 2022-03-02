@@ -41,7 +41,7 @@ Comment.belongsTo(Post, {
 //adding purchase/sell relationships
 Post.hasOne(Purchase, {
   foreignKey: 'post_id',
-//   OnDelete: 'SET NULL'
+  OnDelete: 'SET NULL'
 });
 
 Purchase.belongsTo(Post, {
@@ -52,7 +52,7 @@ Purchase.belongsTo(Post, {
 // link User and Purchase (one-to-many)
 User.hasMany(Purchase, {
     foreignKey: 'user_id',
-    // onDelete: 'SET NULL'
+    onDelete: 'SET NULL'
 });
 
 Purchase.belongsTo(User, {
