@@ -1,0 +1,14 @@
+<div id="post-img">
+    <h1>Upload Image</h1>
+    <form method="POST" action="/api/posts" enctype="multipart/form-data">
+        
+        <input type="file" name="image" accept="image/*" />
+        <input type="submit" for="image" value="Upload" /> <br> <br>
+        <input type="text" name="post_title" id="post_title">
+        <label for="post_title"><strong>Title</strong> </label>
+        <input type="text" name="post_description" id="post_description">
+        <label for="post_description"><strong>Description</strong></label>
+    </form>
+
+    <img src="/api/posts/images/0e25a2015299cf8f11c246904e58fb81" alt="" />
+</div>
