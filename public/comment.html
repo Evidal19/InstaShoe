@@ -18,7 +18,7 @@
     />
     <link href="./css/style.css" rel="stylesheet" />
 
-    <title>InstaShoe</title>
+    <title>comment-section</title>
   </head>
 
   <body>
@@ -35,7 +35,8 @@
 
     <section>
       <div class="comments-container">
-        <div class="comment-section">
+        <img id="comment-pic" src="/public/images/COMMENT.jpeg"      alt="white rocky background">
+        <div class="comment-section">COMMENT ON SELLERS POST
           <div class="mutual-convo">
             <div class="row">
               <p>
@@ -43,15 +44,16 @@
             </div>
           </form>
           </div>
-           <form action="#">
+           <form action="#" id="textarea">
            <textarea
             name="comments"
+            placeholder="Write a comment"
             id="comments"
             style="font-family: sans-serif; font-size: 1em"
           ></textarea>
          </form>
-         <button id="button-login" onclick="('going to comment page')">
-          Submit
+         <button id="button-comment" onclick="('going to comment page')">
+          Add comment
           </button>
         </div>
       </div>

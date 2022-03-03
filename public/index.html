@@ -25,13 +25,7 @@
   <body>
     <header>
       <div class="nav-wrapper">
-        <a
-          href="#"
-          data-target="mobile-demo"
-          class="sidenav-trigger show-on-large"
-          ><i class="material-icons white-text">menu</i>
-        </a>
-        <ul>
+        <ul class="menu">
            <li class="nav-item">
              <a href="#" class="nav-link">Dashboard</a>
            </li>
@@ -40,8 +34,18 @@
            </li>
            <li class="nav-item">
              <a href="#" class="nav-link">Logout</a>
-            </li>
-          </ul>
+           </li>
+        </ul>
+        <button class="hamburger">
+          <a
+            href="#"
+            data-target="mobile-demo"
+            class="sidenav-trigger show-on-large">
+            <i class="menuIcon material-icons white-text">menu</i>
+            <i class="closeIcon material-icons">close</i>
+          </a>
+        </button>
+
         <div id="top-logo" class="logo center black white-text">InstaShoe</div>
         <input
           id="searchbar_input"
@@ -208,7 +212,7 @@
     <footer>
       <h4></h4>
     </footer>
-    <script src="/static/homepage.js"></script>
+    <script src="/public/javascript/homepage.js"></script>
   </body>
 
   <script></script>
