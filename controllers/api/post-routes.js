@@ -86,7 +86,7 @@ router.put('/:post_id', (req, res) => {
     Post.update({
         post_title: req.body.post_title,
         post_description: req.body.post_description,
-        date: req.session.date,
+        date: new Date(),
         user_id: req.body.user_id
     },
     {
