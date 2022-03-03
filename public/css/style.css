@@ -123,17 +123,7 @@ h2 {
   width: 100%;
 }
 
-<<<<<<< HEAD
-.sidenav-trigger {
-  position: absolute;
-  top: 24px;
-  left: 15px;
-  z-index: 5;
-}
-button-first{
-=======
 #btn-one {
->>>>>>> staging
   color: cornsilk;
   background-color: black;
   border-radius: 12px;
