@@ -7,22 +7,22 @@ router.get('/home', (req, res) => {
     console.log(req.session);
     // res.render('../public/img-upload.html')
     console.log('---- GETTING PURCHASES ----');
-    Purchase.findAll({
+    Post.findAll({
       include: [{
         model: User
       },
       {
-        model: Post
+        model: Purchase
       }]
     })
-    .then(dbPurchaseData => {
+    .then(dbPostData => {
         
-        const purchase_data = dbPurchaseData.map(purchase => 
-          purchase.get({ plain: true })
+        const post_data = dbPostData.map(post => 
+          post.get({ plain: true })
         );
   
         res.render('homepage', {
-          purchase_data,
+          post_data,
         });
       })
       .catch(err => {
