@@ -24,7 +24,7 @@ navLink.forEach(
   }
 )
 
-async function newFormHandler(event) {
+async function homePageHandler(event) {
   event.preventDefault();
 
   const title = document.querySelector('input[name=""]').value;
@@ -49,7 +49,7 @@ async function newFormHandler(event) {
   }
 }
 
-document.getElementById('').addEventListener('submit', newFormHandler);
+document.getElementById('').addEventListener('submit', homePageHandler);
 
 
 
