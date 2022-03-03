@@ -24,6 +24,10 @@ Post.init(
         file_src: {
             type: DataTypes.STRING
         },
+        date: {
+            type: DataTypes.DATE(6),
+            allowNull: false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references:  {model: 'user', key: 'id'}

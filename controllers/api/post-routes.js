@@ -67,6 +67,7 @@ router.post('/', upload.single('image'), async (req, res) => {
             post_title: req.body.post_title,
             post_description: req.body.post_description,
             file_src: result.Key,
+            date: req.session.date,
             user_id: req.session.user_id
         }).then(newPost => {
             if (!newPost) {
@@ -85,6 +86,7 @@ router.put('/:post_id', (req, res) => {
     Post.update({
         post_title: req.body.post_title,
         post_description: req.body.post_description,
+        date: req.session.date,
         user_id: req.body.user_id
     },
     {

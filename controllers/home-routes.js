@@ -42,17 +42,18 @@ router.get('/post/:id', (req, res) => {
       'post_title',
       'post_description',
       'file_src',
+      'date'
       // 'created_at',
       // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
     include: [
       {
         model: Comment,
-      attributes: ['id', 'comment_text', 'post_id', 'user_id', /*'created_at'*/],
-        include: {
+        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'date', /*'created_at'*/],
+        include: [{
           model: User,
           attributes: ['username']
-        }
+        }]
       },
       {
         model: User,
@@ -66,12 +67,14 @@ router.get('/post/:id', (req, res) => {
         return;
       }
 
-      const post = dbPostData.get({ plain: true });
+      const post_data = dbPostData.map(post => 
+        post.get({ plain: true })
+      );
 
-      console.log(post);
+      console.log(post_data);
 
       res.render('single-post', {
-        post,
+        post_data,
         // loggedIn: req.session.loggedIn 
       });
     })
