@@ -48,35 +48,22 @@ h2 {
   height: 100vh;
 }
 
-.login-nav {
-  font-size: 20px;
-  color: white;
-  margin-left: 160px;
-  position: absolute;
-  margin-top: 23px;
+#login-nav {
+  color: cornsilk;
+  background-color: black;
+  border-radius: 12px;
+  box-shadow: 0 12px 16px 0 rgb(119 114 114 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+  width: 140px;
+  margin: 20px;
+}
 }
 
 #logout {
-<<<<<<< HEAD
   height: 50px;
   font-size: 25px;
   width: 100px;
   position: absolute;
   margin-left: 140px;
-=======
-  height: 50px; 
-  font-size: 25px; 
-  width: 100px; 
-  position: absolute; 
-  margin-left: 130px;
-  margin-top: 10px;
-  border: 1px solid rgb(0, 0, 0);
-  box-shadow: 0px 0px 0px 0px;
-}
-
-#logout:focus {
-  background-color: rgb(0, 0, 0, 0);
->>>>>>> 34b382c5286b46153b27411ab85d1ae7307d1342
 }
 
 #first-img {
