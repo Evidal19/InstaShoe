@@ -16,22 +16,44 @@
 
 <body>
   <header>
+   <div class="nav-wrapper">
+        <ul class="menu">
+           <li class="nav-item">
+             <a href="/public/dashboard.html" class="nav-link">Dashboard</a>
+           </li>
+           <li class="nav-item">
+              <a href="/public/img-upload.html" class="nav-link">Make a post</a>
+           </li>
+           <li class="nav-item">
+            <a href="/public/comment.html" class="nav-link">Comment</a>
+          </li>
+           <li class="nav-item">
+             <a href="/public/login.html" class="nav-link">Logout</a>
+           </li>
+        </ul>
+        <button class="hamburger">
+          <a
+            href="#"
+            data-target="mobile-demo"
+            class="sidenav-trigger show-on-large">
+            <i class="menuIcon material-icons white-text">menu</i>
+            <i class="closeIcon material-icons">close</i>
+          </a>
+        </button>
 
-    <div class="nav-wrapper">
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large"><i
-        class="material-icons white-text">menu</i></a>
-      <div id="top-logo" class="logo center black white-text">InstaShoe
-        {{#if loggedIn}}
-          <a href="/dashboard" class="login-nav" style="margin-left: 18px">Dashboard</a>
-          <button id="logout" class="btn-no-style">logout</button>
-        {{else}}
-          <a href="/login" class="login-nav">login</a>
-        {{/if}}
+        <div id="top-logo" class="logo center black white-text">InstaShoe</div>
+        <input
+          id="searchbar_input"
+          name="searchbar_input"
+          type="text"
+          placeholder=" Search "
+          class="col s9 offset-s1"
+        />
+        <i class="material-icons white-text search_icon" id="search_icon_click"
+          >search</i
+        >
       </div>
-    </div>
-
-    <input id="searchbar_input" name="searchbar_input" type="text" placeholder="Search" class="col s9 offset-s1" />
-    <i class="material-icons white-text search_icon" id="search_icon_click">search</i>
+    
 
   
     {{{body}}}
@@ -48,3 +70,9 @@
 <script></script>
 
 </html>
+
+
+
+     
+
+       
