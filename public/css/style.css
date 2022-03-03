@@ -55,12 +55,28 @@ h2 {
   position: absolute;
   margin-top: 23px;
 }
+
 #logout {
+<<<<<<< HEAD
   height: 50px;
   font-size: 25px;
   width: 100px;
   position: absolute;
   margin-left: 140px;
+=======
+  height: 50px; 
+  font-size: 25px; 
+  width: 100px; 
+  position: absolute; 
+  margin-left: 130px;
+  margin-top: 10px;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0px 0px 0px 0px;
+}
+
+#logout:focus {
+  background-color: rgb(0, 0, 0, 0);
+>>>>>>> 34b382c5286b46153b27411ab85d1ae7307d1342
 }
 
 #first-img {
@@ -98,6 +114,7 @@ h2 {
     flex-wrap: wrap;
   }
 }
+
 @media only screen and (min-width: 601px) {
   .row .col.m4 {
     width: 33.3333333333%;
@@ -107,6 +124,7 @@ h2 {
     display: flex;
   }
 }
+
 #searchbar_input {
   position: absolute;
   top: 0;

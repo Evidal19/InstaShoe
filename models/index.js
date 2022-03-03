@@ -2,7 +2,6 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Purchase = require('./Purchase');
-const Image = require('./Image');
 
 // create associations between tables
 
@@ -42,7 +41,7 @@ Comment.belongsTo(Post, {
 //adding purchase/sell relationships
 Post.hasOne(Purchase, {
   foreignKey: 'post_id',
-//   OnDelete: 'SET NULL'
+  OnDelete: 'SET NULL'
 });
 
 Purchase.belongsTo(Post, {
@@ -53,7 +52,7 @@ Purchase.belongsTo(Post, {
 // link User and Purchase (one-to-many)
 User.hasMany(Purchase, {
     foreignKey: 'user_id',
-    // onDelete: 'SET NULL'
+    onDelete: 'SET NULL'
 });
 
 Purchase.belongsTo(User, {
@@ -61,18 +60,10 @@ Purchase.belongsTo(User, {
     onDelete: 'SET NULL'
 });
 
-Post.hasOne(Image, {
-    foreignKey : 'img_src'
-});
-
-Image.belongsTo(Post, {
-    foreignKey: 'img_src'
-});
 
 module.exports = {
     User,
     Post,
     Purchase,
-    Comment,
-    Image
+    Comment
 };
