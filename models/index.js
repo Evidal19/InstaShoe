@@ -2,6 +2,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Purchase = require('./Purchase');
+const Sold = require('./sold');
 
 // create associations between tables
 
@@ -60,10 +61,22 @@ Purchase.belongsTo(User, {
     onDelete: 'SET NULL'
 });
 
+User.hasMany(Sold, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+});
+
+Sold.belongsTo(User, {
+    foreignKey: 'user_id',
+    onDelete: 'SET NULL'
+});
+
+
 
 module.exports = {
     User,
     Post,
     Purchase,
-    Comment
+    Comment,
+    Sold
 };
