@@ -1,11 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// Create Comment model
-class Comment extends Model {}
+// Create Post model
+class Sold extends Model {}
 
-// Create fields and columns for Comment
-Comment.init(
+// Create fields and columns for Sold
+Sold.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,21 +13,17 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true
         },
-        comment_text: { 
-            type: DataTypes.STRING,
+        sold_amount: {
+            type: DataTypes.DECIMAL,
             allowNull: false
-        },
-        user_id: {
-            type: DataTypes.INTEGER,
-            references:  {model: 'user', key: 'id'}
         },
         post_id: {
             type: DataTypes.INTEGER,
-            references:  {model: 'post', key: 'id'}
+            references:  { model: 'post', key: 'id' }
         },
-        date: {
-            type: DataTypes.DATE(6),
-            allowNull: false
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: { model: 'user', key: 'id' }
         }
     },
     {
@@ -35,8 +31,8 @@ Comment.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'comment',
+        modelName: 'sold',
     }
 );
 
-module.exports = Comment;
+module.exports = Sold;

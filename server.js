@@ -2,6 +2,19 @@ const express = require('express');
 const sequelize = require('./config/connection');
 const routes = require('./controllers');
 const path= require("path");
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
 // multer
 const multer = require('multer');
 const bodyparser = require('body-parser');
@@ -15,6 +28,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session(sess));
 
 // body parser middleware
 app.use(bodyparser.json())

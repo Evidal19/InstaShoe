@@ -21,31 +21,36 @@ hamburger.addEventListener("click", toggleMenu);
 navLink.forEach(function (link) {
   link.addEventListener("click", toggleMenu);
 });
+async function commentFormHandler(event) {
+  event.preventDefault();
 
-async function newFormHandler(event) {
-    event.preventDefault();
-  
-    const title = document.querySelector('input[name=""]').value;
-    const text = document.querySelector('textarea[name=""]').value;
-  
-    const response = await fetch(`/api/posts`, {
-      method: 'POST',
+  const comment_text = document
+    .querySelector('textarea[name="comments"]')
+    .value.trim();
+  const post_id = window.location.toString().split("/")[
+    window.location.toString().split("/").length - 1
+  ];
+
+  if (comment_text) {
+    const response = await fetch("/api/comments", {
+      method: "POST",
       body: JSON.stringify({
-        title,
-        text,
-        post_url
+        post_id,
+        comment_text,
       }),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        "Content-Type": "application/json",
+      },
     });
-  
+
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.reload();
     } else {
       alert(response.statusText);
     }
+  }
 }
-  
-document.getElementById('button-dashboard-1').addEventListener('submit', newFormHandler);
-  
+
+document
+  .querySelector("#comment-submit")
+  .addEventListener("submit", commentFormHandler);

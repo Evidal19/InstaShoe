@@ -1,36 +1,55 @@
-
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+const menu = document.querySelector(".menu");
 const navLink = document.querySelectorAll(".nav-link");
+const hamburger= document.querySelector(".hamburger");
+const closeIcon= document.querySelector(".closeIcon");
+const menuIcon = document.querySelector(".menuIcon");
 
-// hamburger.addEventListener("click", mobileMenu);
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    closeIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  } else {
+    menu.classList.add("showMenu");
+    closeIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  }
+}
 
-// function mobileMenu() {
-//     hamburger.classList.toggle("active");
-//     navMenu.classList.toggle("active");
-// }
+hamburger.addEventListener("click", toggleMenu);
 
-// navLink.forEach(n => n.addEventListener("click", closeMenu));
+navLink.forEach( 
+  function(link) { 
+    link.addEventListener("click", toggleMenu);
+  }
+)
 
-// function closeMenu() {
-//     hamburger.classList.remove("active");
-//     navMenu.classList.remove("active");
-// }
-fetch('/home', {
-  method: 'POST',
-  headers: {
-    Accept: 'application/json',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify("")
-})
-  .then(response => {
-    if (response.ok) {
-      return response.json("");
+async function homePageHandler(event) {
+  event.preventDefault();
+
+  const title = document.querySelector('input[name=""]').value;
+  const text = document.querySelector('textarea[name=""]').value;
+
+  const response = await fetch(`/api/posts`, {
+    method: 'POST',
+    body: JSON.stringify({
+      title,
+      text,
+      post_url
+    }),
+    headers: {
+      'Content-Type': 'application/json'
     }
-    alert(`Error: ${response.statusText}`);
-  })
-  .then(postResponse => {
-    console.log(postResponse);
-    alert('Item ready for view');
   });
+
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert(response.statusText);
+  }
+}
+
+document.getElementById('').addEventListener('submit', homePageHandler);
+
+
+

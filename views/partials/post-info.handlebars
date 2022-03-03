@@ -1,0 +1,15 @@
+{{!-- display post  --}}
+<form class="body-img" action="#">
+    <div class="body-sections-img">
+        <img src="/api/posts/images/{{file_src}}" alt="" />
+    </div>
+
+    <div class="img-info-description">
+        <p class="img-info-text">
+            <span style="font-weight: bold; font-size: 20px">{{username}}</span><br></br>
+            <span style="font-weight: bold">{{post_title}}</span> {{post_description}}<br></br>
+            <span style="font-weight: bold">Amount: </span>${{price}}
+        </p>
+        <button type="button" onclick="('going to comment page')" id="btn-one">comment</button>
+    </div>
+</form>
