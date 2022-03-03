@@ -68,7 +68,8 @@ router.post('/', upload.single('image'), async (req, res) => {
             post_description: req.body.post_description,
             file_src: result.Key,
             date: new Date(),
-            user_id: req.session.user_id
+            user_id: req.session.user_id,
+            price: req.body.price
         }).then(newPost => {
             if (!newPost) {
                 res.status(404).json({message: 'Post needs post_title, post_description, file_src and user_id'});
@@ -87,7 +88,8 @@ router.put('/:post_id', (req, res) => {
         post_title: req.body.post_title,
         post_description: req.body.post_description,
         date: new Date(),
-        user_id: req.body.user_id
+        user_id: req.body.user_id,
+        price: req.body.price
     },
     {
         where: {

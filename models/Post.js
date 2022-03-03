@@ -28,6 +28,10 @@ Post.init(
             type: DataTypes.DATE(6),
             allowNull: false
         },
+        price: {
+            type: DataTypes.DECIMAL,
+            defaultValue: 0,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references:  {model: 'user', key: 'id'}
