@@ -100,7 +100,7 @@ h2 {
 .img-info-text {
   padding-bottom: 10px;
   text-align: center;
-  padding-right: 60%;
+  padding-right: 70%;
 }
 
 #searchbar_input {
@@ -131,8 +131,7 @@ h2 {
     0 17px 50px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
   margin: 5px;
-  /* padding: 4px 5px 5px 5px; */
-  width: 90px;
+  width: 110px;
 }
 
 button:focus {
