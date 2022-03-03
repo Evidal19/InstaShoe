@@ -50,10 +50,10 @@ router.get('/post/:id', (req, res) => {
       {
         model: Comment,
         attributes: ['id', 'comment_text', 'post_id', 'user_id', 'date', /*'created_at'*/],
-        include: [{
-          model: User,
-          attributes: ['username']
-        }]
+        // include: {
+        //   model: User,
+        //   attributes: ['username']
+        // }
       },
       {
         model: User,
@@ -67,9 +67,7 @@ router.get('/post/:id', (req, res) => {
         return;
       }
 
-      const post_data = dbPostData.map(post => 
-        post.get({ plain: true })
-      );
+      const post_data = dbPostData.get({ plain: true });
 
       console.log(post_data);
 
