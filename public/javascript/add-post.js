@@ -47,5 +47,5 @@ async function newFormHandler(event) {
     }
 }
   
-document.getElementById('button-comment').addEventListener('submit', newFormHandler);
+document.getElementById('button-dashboard-1').addEventListener('submit', newFormHandler);
   

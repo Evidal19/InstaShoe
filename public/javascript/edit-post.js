@@ -22,5 +22,5 @@ async function editFormHandler(event) {
     }
 }
 
-document.getElementById('upload-btn').addEventListener('submit', editFormHandler);
+document.getElementById('#button-dashboard-2').addEventListener('submit', editFormHandler);
   
