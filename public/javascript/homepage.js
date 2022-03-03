@@ -24,22 +24,32 @@ navLink.forEach(
   }
 )
 
+async function newFormHandler(event) {
+  event.preventDefault();
 
-// fetch('/home', {
-//   method: 'POST',
-//   headers: {
-//     Accept: 'application/json',
-//     'Content-Type': 'application/json'
-//   },
-//   body: JSON.stringify("")
-// })
-//   .then(response => {
-//     if (response.ok) {
-//       return response.json("");
-//     }
-//     alert(`Error: ${response.statusText}`);
-//   })
-//   .then(postResponse => {
-//     console.log(postResponse);
-//     alert('Item ready for view');
-//   });
+  const title = document.querySelector('input[name=""]').value;
+  const text = document.querySelector('textarea[name=""]').value;
+
+  const response = await fetch(`/api/posts`, {
+    method: 'POST',
+    body: JSON.stringify({
+      title,
+      text,
+      post_url
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    document.location.replace('/dashboard');
+  } else {
+    alert(response.statusText);
+  }
+}
+
+document.getElementById('').addEventListener('submit', newFormHandler);
+
+
+
