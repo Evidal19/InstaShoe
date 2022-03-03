@@ -24,12 +24,29 @@
     <header>
       <header>
         <div class="nav-wrapper">
-          <a
-            href="#"
-            data-target="mobile-demo"
-            class="sidenav-trigger show-on-large"
-            ><i class="material-icons white-text">menu</i></a
-          >
+          <ul class="menu">
+            <li class="nav-item">
+              <a href="/public/index.html" class="nav-link">Homepage</a>
+            </li>
+            <li class="nav-item">
+               <a href="/public/img-upload.htm" class="nav-link">Make a post</a>
+            </li>
+            <li class="nav-item">
+              <a href="/public/img-upload.html"  class="nav-link">Comment</a>
+            </li>
+            <li class="nav-item">
+              <a href="/public/login.html" class="nav-link">Logout</a>
+            </li>
+         </ul>
+         <button class="hamburger">
+           <a
+             href="#"
+             data-target="mobile-demo"
+             class="sidenav-trigger show-on-large">
+             <i class="menuIcon material-icons white-text">menu</i>
+             <i class="closeIcon material-icons">close</i>
+           </a>
+         </button>
           <div id="top-logo" class="logo center black white-text">InstaShoe</div>
           <input
             id="searchbar_input"
@@ -50,12 +67,13 @@
           alt="Picture of a young women"
         />
       </div>
-      <div class="img-info-description">
-        <p class="img-info-text">
+      <div class="img-info-description-dashboard">
+        <p class="img-info-text-dashboard">
           HI THERE! I am a 22 year old photographer in the fashion industry. My guilty pleasure is spending all my money on shoes. One of the perks in my job field is receiving new items. I receive MANY free shoe samples at my photo-shots. This tends to feed my shoe addiction, because I use InstaShoe to sell those NEW shoes. Then buy more shoes on here, it is a vicious cycle, BUT I LIVE FOR IT!
       </p>
       </div>
     </form>
+    <button id="button-dashboard-1"><a href="/public/img-upload.html">Make Post</a></button> <br></br>
     <form id="items-for-sell" class="available-items" action="#">
       <p id="line"> 
         AVAILABLE SHOES
@@ -72,7 +90,9 @@
              Shoe is a light nude, almost off white color with ajustable strap.</br>
              I am selling for only $15.
            </p>
-           <button type="button" onclick="('going to comment page')">comment</button>
+            <button id="button-dashboard-2"><a href="/public/javascript/edit-post.js">Edit Post</a></button> <br></br>
+            <button id="button-dashboard-3">Delete Post</a></button><br></br>
+            <button id="button-dashboard-4">Item Sold</a></button><br></br>
 
           </div>
       </div>  
@@ -99,4 +119,5 @@
 
 </section>
 </body>
+<script src="/public/javascript/dashboard.js"></script>
 </html>
