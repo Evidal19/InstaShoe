@@ -21,6 +21,6 @@ async function editFormHandler(event) {
       alert(response.statusText);
     }
 }
-  
-document.querySelector('').addEventListener('submit', editFormHandler);
+
+document.getElementById('upload-btn').addEventListener('submit', editFormHandler);
   
