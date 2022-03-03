@@ -24,12 +24,29 @@
     <header>
       <header>
         <div class="nav-wrapper">
-          <a
-            href="#"
-            data-target="mobile-demo"
-            class="sidenav-trigger show-on-large"
-            ><i class="material-icons white-text">menu</i></a
-          >
+          <ul class="menu">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Homepage</a>
+            </li>
+            <li class="nav-item">
+               <a href="#" class="nav-link">Make a post</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Comment</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link">Logout</a>
+            </li>
+         </ul>
+         <button class="hamburger">
+           <a
+             href="#"
+             data-target="mobile-demo"
+             class="sidenav-trigger show-on-large">
+             <i class="menuIcon material-icons white-text">menu</i>
+             <i class="closeIcon material-icons">close</i>
+           </a>
+         </button>
           <div id="top-logo" class="logo center black white-text">InstaShoe</div>
           <input
             id="searchbar_input"
@@ -99,4 +116,5 @@
 
 </section>
 </body>
+<script src="/public/javascript/dashboard.js"></script>
 </html>

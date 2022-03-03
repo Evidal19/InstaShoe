@@ -23,19 +23,46 @@
 
   <body>
     <header>
-      <div class="nav-wrapper">
-        <a
-          href="#"
-          data-target="mobile-demo"
-          class="sidenav-trigger show-on-large"
-          ><i class="material-icons white-text">menu</i></a
-        >
+      <ul class="menu">
+        <li class="nav-item">
+          <a href="#" class="nav-link">Dashboard</a>
+        </li>
+        <li class="nav-item">
+           <a href="#" class="nav-link">Make a post</a>
+        </li>
+        <li class="nav-item">
+         <a href="#" class="nav-link">Comment</a>
+       </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link">Logout</a>
+        </li>
+     </ul>
+     <button class="hamburger">
+       <a
+         href="#"
+         data-target="mobile-demo"
+         class="sidenav-trigger show-on-large">
+         <i class="menuIcon material-icons white-text">menu</i>
+         <i class="closeIcon material-icons">close</i>
+       </a>
+     </button>
       <div id="top-logo" class="logo center black white-text">InstaShoe</div>
+      <input
+          id="searchbar_input"
+          name="searchbar_input"
+          type="text"
+          placeholder=" Search "
+          class="col s9 offset-s1"
+        />
+        <i class="material-icons white-text search_icon" id="search_icon_click"
+          >search</i
+        >
+      </div>
     </header>
 
     <section>
       <div class="comments-container">
-        <img id="comment-pic" src="/public/images/COMMENT.jpeg"      alt="white rocky background">
+        <img id="comment-pic" src="/public/images/COMMENT.jpeg"  alt="white rocky background">
         <div class="comment-section">COMMENT ON SELLERS POST
           <div class="mutual-convo">
             <div class="row">
@@ -59,4 +86,5 @@
       </div>
     </section>
   </body>
+  <script src="/public/javascript/add-post.js"></script>
 </html>
