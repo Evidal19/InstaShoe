@@ -67,7 +67,7 @@ router.post('/', upload.single('image'), async (req, res) => {
             post_title: req.body.post_title,
             post_description: req.body.post_description,
             file_src: result.Key,
-            date: req.session.date,
+            date: new Date(),
             user_id: req.session.user_id
         }).then(newPost => {
             if (!newPost) {
@@ -82,7 +82,7 @@ router.post('/', upload.single('image'), async (req, res) => {
 
 router.put('/:post_id', (req, res) => {
     const postId = req.params.post_id;
-
+    
     Post.update({
         post_title: req.body.post_title,
         post_description: req.body.post_description,
