@@ -1,43 +1,9 @@
-{{!-- {{#if loggedIn}} --}}
-<form class="body-img" action="#">
-    <div class="body-sections-img">
-        <img id="pic-4" src="/api/posts/images/{{post_data.file_src}}" alt="male black,blue and white Nikes" />
-    </div>
+{{!-- display form --}}
+<ol class="post-list">
+  {{#each post_data as |post|}}
+  <li>
+    {{> comments post }}
+  </li>
+  {{/each}}
+</ol>
 
-    <div class="img-info-description">
-        <p class="img-info-text">
-            <span style="font-weight: bold; font-size: 20px">{{post_data.user.username}}</span><br></br>
-            <span style="font-weight: bold">{{post_data.post_title}}</span> {{post_data.post_description}}<br></br>
-            <span style="font-weight: bold">Amount: {{post_data.price}}</span>
-        </p>
-        <button type="button" onclick="('going to comment page')" id="comment-button">comment</button>
-    </div>
-</form>
-
-<section>
-    <div class="mutual-convo">
-        <form id="box">
-            <p>
-
-            </p>
-        </form>
-    </div>
-    <div class="comments-container">
-        <form action="#">
-            <textarea
-            name="comments"
-            id="comments"
-            style="font-family: sans-serif; font-size: 1em"
-            ></textarea>
-        </form>
-        <button id="button-login" onclick="('going to comment page')">
-            Submit
-        </button>
-    </div>
-</section>
-{{!-- {{/if}} --}}
-
-{{!-- {{#if loggedIn}} --}}
-<script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
-{{!-- {{/if}} --}}
