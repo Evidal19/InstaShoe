@@ -5,6 +5,7 @@ const { User, Post, Purchase, Sold, Comment } = require("../models");
 // get homepage to render
 router.get("/home", (req, res) => {
   console.log(req.session);
+  const userId = req.session.user_id;
   // res.render('../public/img-upload.html')
   console.log("---- GETTING POSTS ----");
   Post.findAll({
@@ -19,8 +20,10 @@ router.get("/home", (req, res) => {
   })
     .then((dbPostData) => {
       const post_data = dbPostData.map((post) => post.get({ plain: true }));
+      post_data.current_user_id = userId;
+      console.log(post_data);
       res.render("homepage", {
-        post_data,
+        post_data
       });
     })
     .catch((err) => {

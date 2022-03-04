@@ -8,8 +8,11 @@
         <p class="img-info-text">
             <span style="font-weight: bold; font-size: 20px">{{username}}</span><br></br>
             <span style="font-weight: bold">{{post_title}}</span> {{post_description}}<br></br>
-            <span style="font-weight: bold">Amount: </span>${{price}}
+            <span class="purchase_amount" style="font-weight: bold">Amount: </span>${{price}}
         </p>
-        <button type="button" onclick="('going to comment page')" id="btn-one">comment</button>
+        <button type="button" onclick="/post/{{post_id}}" id="btn-one">comment</button>
+        <button type="button" class="buy-btn" id="btn-one">Buy</button>
+        <span class="user_id">{{current_user_id}}</span>
+        <span class="post_id">{{post_id}}</span>
     </div>
 </form>
