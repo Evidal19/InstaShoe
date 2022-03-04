@@ -503,9 +503,9 @@ input[type="submit"] {
   }
 } */
 
-@media screen and (min-width: 349px){
+/* @media screen and (min-width: 349px){
   * {
     display: flex;
     flex-wrap: wrap;
   }
-} 
+}  */
