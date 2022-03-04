@@ -5,7 +5,7 @@ const buyBtnHandler = async (event) => {
     event.preventDefault();
 
     const purchase_amount = document.querySelector('.purchase_amount');
-    const post_id = document.querySelector('post_id').value;
+    const post_id = document.querySelector('post_id');
     const user_id = document.querySelector('.user_id');
 
     const response = await fetch(`/api/purchases`, {
