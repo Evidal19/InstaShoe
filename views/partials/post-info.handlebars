@@ -12,8 +12,9 @@
         </p>
         <button type="button" onclick="/post/{{id}}" id="btn-one">comment</button>
         <button type="button" class="buy-btn" id="btn-one">Buy</button>
-        <span class="purchase_amount">{{price}}</span>
-        <span class="user_id">{{current_user_id}}</span>
-        <span class="post_id">{{id}}</span>
+        <span hidden class="purchase_amount">{{price}}</span>
+        <span hidden class="user_id">{{current_user_id}}</span>
+        <span hidden class="post_id">{{id}}</span>
+        <span hidden class="post_user_id">{{user.id}}</span>
     </div>
 </form> 
