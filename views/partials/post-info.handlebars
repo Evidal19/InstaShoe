@@ -1,5 +1,5 @@
 {{!-- display post --}}
-{{!-- <form class="body-img" action="#">
+<form class="body-img" action="#">
     <div class="body-sections-img">
         <img src="/api/posts/images/{{file_src}}" alt="" />
     </div>
@@ -12,7 +12,7 @@
         </p>
         <button type="button" onclick="('going to comment page')" id="btn-one">comment</button>
     </div>
-</form> --}}
+</form>
 <img id="comment-pic" src="./images/COMMENT.jpeg" alt="white rocky background">
      <div id="post-img">
       
@@ -25,10 +25,10 @@
             id="upload-post"
             style="font-family: sans-serif; font-size: 1em"
        ></textarea>
-      <!-- <br></br>
+      <<br></br>
       <button id="upload-btn" onclick="('post')">
         Submit
-      </button> -->
+      </button> 
     </form>
     <br></br>
     <form method="POST" action="/api/images" enctype="multipart/form-data">
