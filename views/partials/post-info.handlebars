@@ -10,33 +10,10 @@
             <span style="font-weight: bold">{{post_title}}</span> {{post_description}}<br></br>
             <span style="font-weight: bold">Amount: </span>${{price}}
         </p>
-        <button type="button" onclick="('going to comment page')" id="btn-one">comment</button>
+        <button type="button" onclick="/post/{{id}}" id="btn-one">comment</button>
+        <button type="button" class="buy-btn" id="btn-one">Buy</button>
+        <span class="purchase_amount">{{price}}</span>
+        <span class="user_id">{{current_user_id}}</span>
+        <span class="post_id">{{id}}</span>
     </div>
-</form>
-<img id="comment-pic" src="./images/COMMENT.jpeg" alt="white rocky background">
-     <div id="post-img">
-      
-    
-    <h3>Upload Image</h3>
-    <form id="post-on-img">
-      <textarea
-            name="upload-post"
-            placeholder="Write post description"
-            id="upload-post"
-            style="font-family: sans-serif; font-size: 1em"
-       ></textarea>
-      <<br></br>
-      <button id="upload-btn" onclick="('post')">
-        Submit
-      </button> 
-    </form>
-    <br></br>
-    <form method="POST" action="/api/images" enctype="multipart/form-data">
-      <input type="file" name="image" accept="image/*" />
-      <input type="submit" value="Upload" />
-    </form>
-
-  </div>
-  </body>
-  <script src="./javascript/add-post.js"></script>
-  
+</form> 
