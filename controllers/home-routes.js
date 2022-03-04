@@ -20,7 +20,7 @@ router.get("/home", (req, res) => {
   })
     .then((dbPostData) => {
       const post_data = dbPostData.map((post) => post.get({ plain: true }));
-      post_data.current_user_id = userId;
+      post_data.current_user_id = {userId};
       console.log(post_data);
       
       res.render("homepage", {
