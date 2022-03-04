@@ -23,4 +23,29 @@
     </li>
     {{/each}}
 </ol>
+<<<<<<< HEAD
  
+=======
+ <img id="comment-pic" src="./images/COMMENT.jpeg" alt="white rocky background">
+     <div id="post-img">
+      
+    <h3>Upload Image</h3>
+    <form id="post-on-img">
+      <textarea
+            name="upload-post"
+            placeholder="Write post description"
+            id="upload-post"
+            style="font-family: sans-serif; font-size: 1em"
+       ></textarea>
+      <!-- <br></br>
+      <button id="upload-btn" onclick="('post')">
+        Submit
+      </button> -->
+    </form>
+    <br></br>
+    <form method="POST" action="/api/images" enctype="multipart/form-data">
+      <input type="file" name="image" accept="image/*" />
+      <input type="submit" value="Upload" />
+    </form>
+    
+>>>>>>> aa80b0911e6411e445233f28d7f395fba98f8745
