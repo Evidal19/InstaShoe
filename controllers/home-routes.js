@@ -14,25 +14,6 @@ router.get("/home", (req, res) => {
         model: User,
       },
       {
-<<<<<<< HEAD
-        model: Post
-      }]
-    })
-    .then(dbPurchaseData => {
-        
-        const purchase_data = dbPurchaseData.map(purchase => 
-          purchase.get({ plain: true })
-        );
-  
-        console.log(purchase_data);
-        res.render('homepage', {
-          purchase_data,
-        });
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-=======
         model: Purchase,
       },
     ],
@@ -48,7 +29,6 @@ router.get("/home", (req, res) => {
       
       res.render("homepage", {
         post_data
->>>>>>> 54a7e575d9aa275ea408fecd10de8c9a36b7f098
       });
     })
     .catch((err) => {
