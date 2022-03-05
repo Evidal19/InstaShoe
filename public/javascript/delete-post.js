@@ -15,5 +15,5 @@ async function deleteFormHandler(event) {
     }
   }
   
-  document.querySelector('').addEventListener('click', deleteFormHandler);
+  document.getElementById('#button-dashboard-3').addEventListener('click', deleteFormHandler);
   

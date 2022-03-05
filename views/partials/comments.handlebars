@@ -1,12 +1,19 @@
-<div class="comments">
-  {{#each this}}
-  <section class="comment">
-    <div class="meta">
-      {{user.username}} on {{!-- {{format_date created_at}} --}}
+<section>
+  <div class="comments-container">
+    <div class="comment-section">
+      <div class="mutual-convo">
+        <div class="row">
+          <p>
+            {{ comment_text }}
+          </p>
+        </div>
+        </form>
+      </div>
+      
     </div>
     <div class="text">
       {{comment_text}}
     </div>
   </section>
-  {{/each}}
 </div>
+

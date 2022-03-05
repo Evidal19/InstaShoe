@@ -24,6 +24,14 @@ Post.init(
         file_src: {
             type: DataTypes.STRING
         },
+        date: {
+            type: DataTypes.DATE(6),
+            allowNull: false
+        },
+        price: {
+            type: DataTypes.DECIMAL,
+            defaultValue: 0,
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references:  {model: 'user', key: 'id'}

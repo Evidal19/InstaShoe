@@ -21,6 +21,6 @@ async function editFormHandler(event) {
       alert(response.statusText);
     }
 }
-  
-document.querySelector('').addEventListener('submit', editFormHandler);
+
+document.getElementById('#button-dashboard-2').addEventListener('submit', editFormHandler);
   

@@ -1,49 +1,70 @@
-{{!-- display dashboard --}}
-
-{{!-- basic profile information --}}
-<form id="profile-img" class="profile-start" action="#">
-    <div class="profile-sections-img">
+<section id="profile" class="dashboard">
+    <form id="profile-img" class="profile-start" action="#">
+    
+      <div class="profile-sections-img">
         <img
           id="profile-picture"
-          src="/images/profile-img.jpeg"
+          src="./images/profile-img.jpeg"
           alt="Picture of a young women"
         />
-    </div>
-    <div class="img-info-description">
-        <p class="img-info-text">
-          [Insert handlebars variable]
+      </div>
+      <div class="img-info-description-dashboard">
+        <p class="img-info-text-dashboard">
+          HI THERE! I am a 22 year old photographer in the fashion industry. My guilty pleasure is spending all my money on shoes. One of the perks in my job field is receiving new items. I receive MANY free shoe samples at my photo-shots. This tends to feed my shoe addiction, because I use InstaShoe to sell those NEW shoes. Then buy more shoes on here, it is a vicious cycle, BUT I LIVE FOR IT!
+      </p>
+      </div>
+    </form>
+     <button id="button-dashboard-1"><a href="./img-upload.html">Make Post</a></button>
+    <form id="items-for-sell" class="available-items" action="#">
+
+
+  <form id="items-for-sell" class="available-items" action="#">
+      <p id="line"> 
+        AVAILABLE SHOES
+      </p>
+      <div class="profile-selling-img">
+        <img
+          id="available-shoes"
+          src="./images/profile3.jpeg"
+          alt="Picture of nude flat shoes for women"
+        />
+         <div id="nude-shoe" class="available-shoe">
+           <p>
+             Never been worn H&M shoes in size 7 for women.</br>
+             Shoe is a light nude, almost off white color with ajustable strap.</br>
+             I am selling for only $15.
+           </p>
+            <button id="button-dashboard-2"><a href="./javascript/edit-post.js">Edit Post</a></button> <br></br>
+            <button id="button-dashboard-3">Delete Post</a></button><br></br>
+            <button id="button-dashboard-4">Item Sold</a></button><br></br>
+
+          </div>
+      </div>  
+    </form>
+
+
+ <form>
+      <form id="items-sold" class="items-sold" action="#">
+        <p id="line-2"> 
+          SOLD HISTORY
         </p>
-    </div>
-</form>
-
-{{!-- AVAILABLE SHOES section --}}
-<form id="items-for-sell" class="available-items" action="#">
-    <p id="line">AVAILABLE SHOES</p>
-    {{!-- {{#each}} --}}
         <div class="profile-selling-img">
-                <img
-                    id="available-shoes"
-                    src="/images/profile3.jpeg" {{!-- replace with variable to set array --}}
-                    alt="Picture of nude flat shoes for women"
-                />
-            <div id="nude-shoe" class="available-shoe">
-                <p>[Insert handlebars varaible to set array]</p>
-                <button type="button" onclick="('going to comment page')">comment</button>
-            </div>
-        </div> 
-    {{!-- {{/each}}  --}}
-</form>
-
-{{!-- SOLD HISTORY section --}}
-<form id="items-sold" class="items-sold" action="#">
-    <p id="line-2">SOLD HISTORY</p>
-    {{!-- {{#each}} --}}
-        <div class="profile-selling-img">
-            <img
+          <img
             id="shoes-sold-1"
-            src="/images/profile2.jpeg" {{!-- replace with variable to set array --}}
+            src="./images/profile2.jpeg"
             alt="Picture of royale blue heel with bold flower patern"
+          />
+          <div class="profile-selling-img">
+            <img
+              id="shoes-sold-2"
+              src="./images/profile1.jpeg"
+              alt="Picture of nude bedazzle heels"
             />
-        </div>
-    {{!-- {{/each}} --}}
-</form>
+     </form>
+    </body>
+
+</section>
+</body>
+<script src="./javascript/dashboard.js"></script>
+
+

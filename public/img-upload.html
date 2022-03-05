@@ -17,6 +17,7 @@
     rel="stylesheet"
   />
   <link href="./css/style.css" rel="stylesheet" />
+
     <title>InstaShoe</title>
   </head>
   </head>
@@ -27,18 +28,59 @@
   <body>
     <header>
       <div class="nav-wrapper">
-        <a
-          href="#"
-          data-target="mobile-demo"
-          class="sidenav-trigger show-on-large"
-          ><i class="material-icons white-text">menu</i></a
-        >
+        <ul class="menu">
+           <li class="nav-item">
+             <a href="./dashboard.html" class="nav-link">Dashboard</a>
+           </li>
+           <li class="nav-item">
+              <a href="./img-upload.html" class="nav-link">Make a post</a>
+           </li>
+           <li class="nav-item">
+            <a href="./comment.html" class="nav-link">Comment</a>
+          </li>
+           <li class="nav-item">
+             <a href="./login.html" class="nav-link">Logout</a>
+           </li>
+        </ul>
+        <button class="hamburger">
+          <a
+            href="#"
+            data-target="mobile-demo"
+            class="sidenav-trigger show-on-large">
+            <i class="menuIcon material-icons white-text">menu</i>
+            <i class="closeIcon material-icons">close</i>
+          </a>
+        </button>
       <div id="top-logo" class="logo center black white-text">InstaShoe</div>
-    </header>
+        <input
+          id="searchbar_input"
+          name="searchbar_input"
+          type="text"
+          placeholder=" Search "
+          class="col s9 offset-s1"
+        />
+        <i class="material-icons white-text search_icon" id="search_icon_click"
+          >search</i
+        >
+      </div>
+    <img id="comment-pic" src="./images/COMMENT.jpeg" alt="white rocky background">
      <div id="post-img">
-
+      
     
-    <h1>Upload Image</h1>
+    <h3>Upload Image</h3>
+    <form id="post-on-img">
+      <textarea
+            name="upload-post"
+            placeholder="Write post description"
+            id="upload-post"
+            style="font-family: sans-serif; font-size: 1em"
+       ></textarea>
+      <!-- <br></br>
+      <button id="upload-btn" onclick="('post')">
+        Submit
+      </button> -->
+    </form>
+    <br></br>
     <form method="POST" action="/api/images" enctype="multipart/form-data">
       <input type="file" name="image" accept="image/*" />
       <input type="submit" value="Upload" />
@@ -46,4 +88,5 @@
 
   </div>
   </body>
+  <script src="./javascript/add-post.js"></script>
 </html>

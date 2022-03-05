@@ -1,9 +1,12 @@
 {{!-- display form --}}
+<div id="top-shoe" class="first shoe">
+  <img class="header-img" alt="picture of Nike sneaker shoe" src="./images/new-main.jpeg" />
+</div>
+
 <ol class="post-list">
-  {{#each purchase_data as |purchase|}}
+  {{#each post_data as |post|}}
   <li>
-    {{> post-info purchase }}
+    {{> post-info post }}
   </li>
   {{/each}}
 </ol>
-
