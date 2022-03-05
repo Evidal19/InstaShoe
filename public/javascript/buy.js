@@ -48,4 +48,5 @@ const buyBtnHandler = async (event) => {
 
 }
 
+
 buyBtn.addEventListener('click', buyBtnHandler);

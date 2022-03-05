@@ -10,7 +10,7 @@
             <span style="font-weight: bold">{{post_title}}</span> {{post_description}}<br></br>
             <span style="font-weight: bold">Amount: </span>${{price}}
         </p>
-        <button type="button" onclick="/post/{{id}}" id="btn-one">comment</button>
+        <button type="button" onclick="location.href = '/post/{{id}}'"  id="btn-one">comment</button>
         <button type="button" class="buy-btn" id="btn-one">Buy</button>
         <span hidden class="purchase_amount">{{price}}</span>
         <span hidden class="user_id">{{current_user_id}}</span>
