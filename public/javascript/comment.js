@@ -21,6 +21,9 @@ hamburger.addEventListener("click", toggleMenu);
 navLink.forEach(function (link) {
   link.addEventListener("click", toggleMenu);
 });
+
+
+
 async function commentFormHandler(event) {
   event.preventDefault();
 
