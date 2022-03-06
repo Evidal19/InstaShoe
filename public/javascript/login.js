@@ -1,31 +1,3 @@
-async function signupFormHandler(event) {
-  event.preventDefault();
-
-  const username = document.querySelector("#username").value.trim();
-  const email = document.querySelector("#email").value.trim();
-  const password = document.querySelector("#password").value.trim();
-
-
-  if (username && email && password) {
-    const response = await fetch("/api/users", {
-      method: "post",
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-      }),
-      headers: { "Content-Type": "application/json" },
-    });
-
-    // check the response status
-    if (response.ok) {
-      console.log("success");
-    } else {
-      alert(response.statusText);
-    }
-  }
-}
-
 async function loginFormHandler(event) {
   event.preventDefault();
 
@@ -36,7 +8,7 @@ async function loginFormHandler(event) {
 
   if (username && password) {
     const response = await fetch("/api/users/login", {
-      method: "post",
+      method: "POST",
       body: JSON.stringify({
         username,
         password,
@@ -45,15 +17,16 @@ async function loginFormHandler(event) {
     });
 
     if (response.ok) {
-      document.location.replace("/");
+      document.location.replace("/home");
     } else {
       alert(response.statusText);
     }
+  } else {
+    alert('username or password incorrect');
   }
 }
 
-
-document.querySelector("#button-login")
+document.querySelector("#submit-btn")
   .addEventListener("click", loginFormHandler);
 
 document.querySelector('#button-sign-up')
