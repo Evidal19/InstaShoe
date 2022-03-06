@@ -80,12 +80,15 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px 0px 20px 0px;
 }
 
+.post-img {
+  max-width: 50%;
+  align-self: center;
+}
 .body-sections-img {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .img-info-description {
@@ -100,7 +103,6 @@ h2 {
 .img-info-text {
   padding-bottom: 10px;
   text-align: center;
-  padding-right: 70%;
 }
 
 #searchbar_input {

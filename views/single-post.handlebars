@@ -1,6 +1,6 @@
 {{!-- display form --}}
 <ol class="post-list">
-    <form class="body-img" action="#">
+    <form class="body-img" action="#" style="margin-top: 6rem">
         <div class="body-sections-img">
             <img id="pic-4" src="/api/posts/images/{{post_data.file_src}}" alt="male black,blue and white Nikes" />
         </div>
@@ -12,7 +12,8 @@
                 <span style="font-weight: bold">Amount: {{post_data.price}}</span>
             </p>
             <form action="#" id="textarea">
-                <textarea name="comments" placeholder="Write a comment" id="comments" style="font-family: sans-serif; font-size: 1em"></textarea>
+                <textarea name="comments" placeholder="Write a comment" id="comments"
+                    style="font-family: sans-serif; font-size: 1em"></textarea>
             </form>
             <button type="button" onclick="('going to comment page')" id="comment-button">comment</button>
         </div>
@@ -23,4 +24,3 @@
     </li>
     {{/each}}
 </ol>
- 
