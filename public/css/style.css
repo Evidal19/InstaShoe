@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
 a {
@@ -42,6 +44,7 @@ h2 {
   flex-direction: column;
   width: 100%;
 }
+
 
 #top-shoe {
   text-align: center;
@@ -160,10 +163,21 @@ h2 {
 /* SEARCH BAR END  */
 
 #top-logo {
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  width: 100%;
+  width: 100%; */
+  /* position: absolute; */
+  /* top: 0;
+  width: 100%; */
+  top: 0;
+    width: 100%;
+    /* display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; */
+  /* display: flex;
+  flex-wrap: wrap; */
 }
+
 
 #btn-one {
   color: cornsilk;
@@ -214,8 +228,8 @@ button:focus {
 }
 
 #available-shoes {
-  height: 800px;
-  width: 900px;
+  height: 700px;
+  width: 600px;
   padding-top: 4%;
   padding-bottom: 4%;
   padding-right: 4%;
@@ -241,6 +255,7 @@ button:focus {
   text-align: center;
   text-decoration-color: black;
   font-weight: 5000;
+  font-weight: 900;
   border-style: outset;
   border-bottom-color: black;
   padding-top: 3%;
@@ -263,18 +278,18 @@ button:focus {
 
 #shoes-sold-2 {
   height: 695px;
+  width: 570px;
   padding: 15px 15px 15px 15px;
 }
 
 .profile-selling-img {
-  /* padding: 85px 10px 5px 101px; */
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
 }
 
 .login-container {
-  padding: 279px 290px 35px 290px;
+  padding: 275px 290px 63px 40px;
  }
 
 #button-login {
@@ -393,9 +408,9 @@ input[type="submit"] {
   box-shadow: 8 12px 16px 0 rgb(119 114 114 / 24%),
     0 17px 50px 0 rgb(0 0 0 / 19%);
   cursor: pointer;
-  position: absolute;
-  top: 1295px;
-  left: 1020px;
+  /* position: absolute; */
+  /* top: 1295px;
+  left: 1020px; */
   height: 27px;
   width: 200px;
 }
@@ -406,9 +421,9 @@ input[type="submit"] {
   box-shadow: 8 12px 16px 0 rgb(119 114 114 / 24%),
     0 17px 50px 0 rgb(0 0 0 / 19%);
   cursor: pointer;
-  position: absolute;
-  top: 1260px;
-  left: 1020px;
+  /* position: absolute; */
+  top: 1582px;
+  /* left: 1020px; */
   height: 27px;
   width: 200px;
 }
@@ -420,9 +435,9 @@ input[type="submit"] {
   box-shadow: 8 12px 16px 0 rgb(119 114 114 / 24%),
     0 17px 50px 0 rgb(0 0 0 / 19%);
   cursor: pointer;
-  position: absolute;
-  top: 1225px;
-  left: 1020px;
+  /* position: absolute; */
+  top: 1637px;
+  /* left: 1020px; */
   height: 27px;
   width: 200px;
 }
@@ -435,7 +450,7 @@ input[type="submit"] {
     0 17px 50px 0 rgb(0 0 0 / 19%);
   width: 206px;
   cursor: pointer;
-  position: absolute;
+  /* position: absolute; */
   left: 600px;
   height: 27px;
   width: 200px;
@@ -520,25 +535,30 @@ input[type="submit"] {
   padding-top: 4%;
 }
 
-@media screen and (max-width: 200px) {
+@media screen and (max-width: 300px) {
   * {
-    display: flex;
+    box-sizing: border-box;
     flex-wrap: wrap;
-    flex-direction: column;
+    padding-right: 0%;
+    margin: 0%;
+    overflow-x: hidden;
   }
 }
 
-@media (min-width: 200px) {
+@media (min-width: 300px) {
   .nav-wrapper {
-    width: 30%;
+    width: 100%;
+    overflow-x: hidden;
   }
 }
-@media (min-width: 200px) {
+@media (min-width: 300px) {
   #searchbar_input {
-    width: 30%;
+    width: 20%;
     cursor: pointer;
-    padding-right: 1%;
+    /* padding-right: 1%;
     padding-left: 2%;
-    right: 0px;
+    right: 0px; */
+    overflow-x: hidden;
   }
 }
+
