@@ -119,7 +119,21 @@ router.get("/post-upload", (req, res) => {
 });
 
 router.get("/dashboard", (req, res) => {
-  res.render("dashboard");
+  console.log(req.session.username);
+  var onlyName;
+  var userName;
+
+  if (req.session.username) {
+    userName = JSON.stringify(req.session.username);
+    onlyName = userName.replace(/["]+/g, '');
+  }
+  else {
+    onlyName = '';
+  }
+  res.render("dashboard", { 
+    loggedIn: req.session.loggedIn,
+    instaUserName: onlyName
+  });
 });
 
 module.exports = router;
