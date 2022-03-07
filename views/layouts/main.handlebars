@@ -46,7 +46,7 @@
       <i class="material-icons white-text search_icon" id="search_icon_click">search</i>
       <ul id="myUL">
         {{#each post_data as |post|}}
-        <li><a href="/api/users/{{post.user.id}}">{{post.user.username}}</a></li>
+        <li id="list-e"><a href="/api/users/{{post.user.id}}">{{post.user.username}}</a></li>
         {{/each}}
       </ul>
     </div>
@@ -59,6 +59,7 @@
     <script src="./javascript/login.js"></script>
     <script src="./javascript/logout.js"></script>
     <script src="./javascript/buy.js"></script>
+    <script src="./javascript/search-bar.js"></script>
 </body>
 
 <footer>

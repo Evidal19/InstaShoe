@@ -127,6 +127,7 @@ h2 {
   width: 300px;
   margin-left: 1043px;
   margin-top: 73px;
+  position: absolute;
 }
 
 #myUL li a {
