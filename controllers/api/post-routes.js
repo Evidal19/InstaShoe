@@ -92,7 +92,9 @@ router.post("/", upload.single("image"), async (req, res) => {
             });
           return;
         }
-        res.json({ message: "success", newPost });
+        // res.json({ message: "success", newPost });
+        // window.location.href = "/home";
+        res.redirect('/home');
       })
       .catch((err) => res.status(500).json(err));
   }
