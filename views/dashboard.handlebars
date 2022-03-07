@@ -2,15 +2,13 @@
     <form id="profile-img" class="profile-start" action="#">
     
       <div class="profile-sections-img">
-        {{!-- <img
-          id="profile-picture"
-          src="./images/profile-img.jpeg"
-          alt="Picture of a young women"
-        /> --}}
+       <form id="new-post-form" method="POST" action="/api/posts" enctype="multipart/form-data">Change profile picture
+        <input type="file" name="image" accept="image/*" />
+        <button id="button-change-pic">Submit</button>
       </div>
       <div class="img-info-description-dashboard">
         <p class="img-info-text-dashboard">
-          {{!-- HI THERE! I am a 22 year old photographer in the fashion industry. My guilty pleasure is spending all my money on shoes. One of the perks in my job field is receiving new items. I receive MANY free shoe samples at my photo-shots. This tends to feed my shoe addiction, because I use InstaShoe to sell those NEW shoes. Then buy more shoes on here, it is a vicious cycle, BUT I LIVE FOR IT! --}}
+        
       </p>
       </div>
     </form>
@@ -23,20 +21,14 @@
         AVAILABLE SHOES
       </p>
       <div class="profile-selling-img">
-        {{!-- <img
-          id="available-shoes"
-          src="./images/profile3.jpeg"
-          alt="Picture of nude flat shoes for women"
-        /> --}}
+       
          <div id="nude-shoe" class="available-shoe">
            <p>
-             {{!-- Never been worn H&M shoes in size 7 for women.</br>
-             Shoe is a light nude, almost off white color with ajustable strap.</br>
-             I am selling for only $15. --}}
+             
            </p>
             <button id="button-dashboard-2"><a href="./javascript/edit-post.js">Edit Post</a></button> <br></br>
-            <button id="button-dashboard-3">Delete Post</a></button><br></br>
-            <button id="button-dashboard-4">Item Sold</a></button><br></br>
+            <button id="button-dashboard-3"><a href= "./javascript/delete-post.js">Delete Post</a></button><br></br>
+            <button id="button-dashboard-4"><a href="./javascript/sold.js">Sold</a></button><br></br>
 
           </div>
       </div>  
@@ -49,22 +41,17 @@
           SOLD HISTORY
         </p>
         <div class="profile-selling-img">
-          {{!-- <img
-            id="shoes-sold-1"
-            src="./images/profile2.jpeg"
-            alt="Picture of royale blue heel with bold flower patern"
-          /> --}}
+          
           <div class="profile-selling-img">
-            {{!-- <img
-              id="shoes-sold-2"
-              src="./images/profile1.jpeg"
-              alt="Picture of nude bedazzle heels"
-            /> --}}
+            
      </form>
     </body>
 
 </section>
 </body>
 <script src="./javascript/dashboard.js"></script>
+
+<script src="/public/javascript/delete-post.js"></script>
+
 
 
