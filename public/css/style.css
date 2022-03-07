@@ -131,15 +131,23 @@ h2 {
 }
 
 #myUL li a {
-  border: 1px solid #ddd; 
+  border: 1px solid rgb(255, 255, 255, 0); 
   margin-top: -1px; 
-  background-color: #f6f6f6; 
+  background-color: rgb(255, 255, 255, 0); 
   padding: 12px; 
   text-decoration: none; 
   font-size: 18px; 
-  color: black; 
+  color: rgb(255, 255, 255, 0);
   display: block; 
 }
+
+/* use as temporary replacement for toggle function, START */
+#myUL li a:hover {
+  border: 1px solid #ddd; 
+  background-color: #f6f6f6;
+  color: black; 
+}
+/* END */
 
 #myUL li a:hover:not(.header) {
   background-color: #eee; 
