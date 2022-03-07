@@ -83,7 +83,6 @@ h2 {
 }
 
 .post-img {
-  max-width: 50%;
   align-self: center;
 }
 .body-sections-img {
@@ -92,18 +91,19 @@ h2 {
 }
 
 .img-info-description {
-  display: flex;
-  flex-direction: column;
-  line-height: 15px;
-  width: 50%;
-  padding: 20px 17px 15px 288px;
-  justify-content: center;
+  max-width: 30rem;
 }
 
 .img-info-text {
   padding-bottom: 10px;
   text-align: center;
 }
+
+.post-btns {
+  display: flex;
+  justify-content: space-around;
+}
+
 
 #searchbar_input {
   position: absolute;
