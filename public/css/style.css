@@ -17,12 +17,6 @@ body {
   overflow-x: hidden;
 }
 
-/* header{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-} */
-
 #top-logo {
   text-align: center;
   font-size: xxx-large;
@@ -273,13 +267,17 @@ button:focus {
 }
 
 .profile-selling-img {
-  padding: 85px 10px 5px 101px;
+  /* padding: 85px 10px 5px 101px; */
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-/* .login-container {
-  /* padding: 279px 290px 35px 290px; */
-/* } */
-*/ #button-login {
+.login-container {
+  padding: 279px 290px 35px 290px;
+ }
+
+#button-login {
   color: cornsilk;
   background-color: black;
   border-radius: 12px;
