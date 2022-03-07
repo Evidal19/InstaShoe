@@ -135,6 +135,7 @@ router.get("/post-upload", (req, res) => {
 router.get("/dashboard", withAuth, (req, res) => {
   var onlyName;
   var userName;
+  console.log(req.session.loggedIn)
 
   if (req.session.username) {
     userName = JSON.stringify(req.session.username);
