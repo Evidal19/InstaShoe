@@ -26,9 +26,22 @@ router.get("/home", (req, res) => {
         element.current_user_id = userId;
       }
       console.log(post_data);
+
+      var onlyName;
+      var userName;
+
+      if (req.session.username) {
+        userName = JSON.stringify(req.session.username);
+        onlyName = userName.replace(/["]+/g, '');
+      }
+      else {
+        onlyName = '';
+      }
       
       res.render("homepage", {
-        post_data
+        post_data,
+        loggedIn: req.session.loggedIn,
+        instaUserName: onlyName
       });
     })
     .catch((err) => {

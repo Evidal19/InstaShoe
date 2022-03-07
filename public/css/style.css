@@ -54,6 +54,10 @@ h2 {
   height: 100vh;
 }
 
+.greetings {
+  font-size: 22px; 
+}
+
 #login-nav {
   color: cornsilk;
   background-color: black;

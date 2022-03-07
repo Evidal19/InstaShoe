@@ -41,7 +41,12 @@
         </a>
       </button>
 
-      <div id="top-logo" class="logo center black white-text">InstaShoe</div>
+      <div id="top-logo" class="logo center black white-text">
+        InstaShoe
+        {{#if loggedIn}}
+        <p class="greetings">Hello, {{instaUserName}}</p>
+        {{/if}}
+      </div>
       <input id="searchbar_input" name="searchbar_input" type="text" placeholder=" Search " class="col s9 offset-s1" onclick="InstaBar()" />
       <i class="material-icons white-text search_icon" id="search_icon_click">search</i>
       <ul id="myUL">
