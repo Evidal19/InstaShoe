@@ -42,8 +42,19 @@
       </button>
 
       <div id="top-logo" class="logo center black white-text">InstaShoe</div>
-      <input id="searchbar_input" name="searchbar_input" type="text" placeholder=" Search " class="col s9 offset-s1" />
+      <input id="searchbar_input" name="searchbar_input" type="text" placeholder=" Search " class="col s9 offset-s1" onclick="InstaBar()" />
       <i class="material-icons white-text search_icon" id="search_icon_click">search</i>
+      <ul id="myUL">
+        {{!-- placeholder search Items --}}
+        <li><a href="#">User 1</a></li>
+        <li><a href="#">User 2</a></li>
+        <li><a href="#">User 3</a></li>
+        <li><a href="#">User 4</a></li>
+        <li><a href="#">User 5</a></li>
+        <li><a href="#">User 6</a></li>
+        <li><a href="#">User 7</a></li>
+        {{!-- additional search items need to be rendered dynamically via front-end JavaScript --}}
+      </ul>
     </div>
 
 
