@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { User, Post, Purchase, Sold, Comment } = require("../models");
+const withAuth = require('../utils/auth');
 
 // get homepage to render
 router.get("/home", (req, res) => {
@@ -118,7 +119,7 @@ router.get("/post-upload", (req, res) => {
   res.render("post");
 });
 
-router.get("/dashboard", (req, res) => {
+router.get("/dashboard", withAuth, (req, res) => {
   console.log(req.session.username);
   var onlyName;
   var userName;
