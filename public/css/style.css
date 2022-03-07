@@ -124,6 +124,9 @@ h2 {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  width: 300px;
+  margin-left: 1043px;
+  margin-top: 73px;
 }
 
 #myUL li a {
