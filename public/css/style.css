@@ -239,8 +239,8 @@ button:focus {
   align-items: center;
 }
 .comments-container {
-  padding: 72px 2px 0px 4px;
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 #comments {
@@ -258,11 +258,9 @@ button:focus {
 .comment-section {
   background-color: whitesmoke;
   text-align: center;
-  left: 50%;
-  position: absolute;
-  top: 210px;
-  left: 350px;
-  width: 700px;
+  width: 40rem;
+  align-self: center;
+  margin-top: 1.5rem;
 }
 
 #textarea {
