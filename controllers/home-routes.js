@@ -116,11 +116,23 @@ router.get("/register", (req, res) => {
 });
 
 router.get("/post-upload", (req, res) => {
-  res.render("post");
+  var onlyName;
+  var userName;
+
+  if (req.session.username) {
+    userName = JSON.stringify(req.session.username);
+    onlyName = userName.replace(/["]+/g, '');
+  }
+  else {
+    onlyName = '';
+  }
+  res.render("post", { 
+    loggedIn: req.session.loggedIn,
+    instaUserName: onlyName
+  });
 });
 
 router.get("/dashboard", withAuth, (req, res) => {
-  console.log(req.session.username);
   var onlyName;
   var userName;
 

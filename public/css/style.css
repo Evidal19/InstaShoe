@@ -123,6 +123,21 @@ h2 {
   right: 0;
 }
 
+.login-container p {
+  margin-top: 15px;
+}
+
+.login-container a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.login-container a:active {
+  opacity: 0.2;
+  text-decoration: none;
+  color: purple;
+}
+
 #myUL {
   /* Remove default list styling */
   list-style-type: none;
