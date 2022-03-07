@@ -1,6 +1,10 @@
 <div id="post-img">
-    <h1>Create Post</h1>
-    <form id="new-post-form" method="POST" action="/api/posts" enctype="multipart/form-data">
+    <div style="margin-top: 4rem;">
+        <h1>Create Post</h1>
+    </div>
+    
+    <div style="padding: 6rem;">
+        <form id="new-post-form" method="POST" action="/api/posts" enctype="multipart/form-data">
         
         <input type="file" name="image" accept="image/*" />
 
@@ -14,7 +18,9 @@
         <label for="price"><strong>Asking Price</strong></label>
         <br> <br>
         <input type="submit" for="image"  value="Create post!" /> 
-    </form>
+        </form>
+    </div>
+    
 </div>
 
 <script src="./javascript/new-post.js"></script>
