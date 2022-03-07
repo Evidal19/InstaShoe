@@ -76,9 +76,21 @@ router.get("/post/:id", (req, res) => {
 
       console.log(post_data);
 
+      var onlyName;
+      var userName;
+
+      if (req.session.username) {
+        userName = JSON.stringify(req.session.username);
+        onlyName = userName.replace(/["]+/g, '');
+      }
+      else {
+        onlyName = '';
+      }
+
       res.render("single-post", {
-        post_data: post_data
-        // loggedIn: req.session.loggedIn
+        post_data: post_data,
+        loggedIn: req.session.loggedIn,
+        instaUserName: onlyName
       });
     })
     .catch((err) => {
