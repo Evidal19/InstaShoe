@@ -1,4 +1,3 @@
-{{#if loggedIn}}
 {{!-- display form --}}
 <ol class="post-list">
     <div class="body-img" action="#" style="margin-top: 6rem">
@@ -13,6 +12,7 @@
                 <span style="font-weight: bold">Amount: ${{post_data.price}}</span>
             </p>
         </div>
+        {{#if loggedIn}}
         <div class="new-comment">
             <div>
                 <form >
@@ -24,6 +24,11 @@
                 </form>
             </div>
         </div>
+        {{else}}
+        <div class="prevent-post">
+            <p>You need to be logged in to post comments <a href="/login">Login Here</a></p>
+        </div>
+        {{/if}}
     </div>
     {{#each post_data.comments as |post| }}
     <li>
@@ -32,4 +37,3 @@
     {{/each}}
 </ol>
 <script src="/javascript/add-comment.js"></script>
-{{/if}}

@@ -127,12 +127,12 @@ h2 {
   margin-top: 15px;
 }
 
-.login-container a {
+.login-container a, .prevent-post a {
   color: blue;
   text-decoration: underline;
 }
 
-.login-container a:active {
+.login-container a:active, .prevent-post a:active {
   opacity: 0.2;
   text-decoration: none;
   color: purple;

@@ -53,7 +53,7 @@ router.get("/home", (req, res) => {
 });
 
 // get single post
-router.get("/post/:id", withAuth, (req, res) => {
+router.get("/post/:id", (req, res) => {
   const postId = req.params.id;
   Post.findOne({
     where: {
