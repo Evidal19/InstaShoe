@@ -53,7 +53,7 @@ router.get("/home", (req, res) => {
 });
 
 // get single post
-router.get("/post/:id", (req, res) => {
+router.get("/post/:id", withAuth, (req, res) => {
   const postId = req.params.id;
   Post.findOne({
     where: {
@@ -116,7 +116,7 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
-router.get("/post-upload", (req, res) => {
+router.get("/post-upload", withAuth, (req, res) => {
   var onlyName;
   var userName;
 
