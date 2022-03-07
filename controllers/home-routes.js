@@ -27,6 +27,7 @@ router.get("/home", (req, res) => {
         element.current_user_id = userId;
       }
       console.log(post_data);
+      console.log(req.session.loggedIn);
 
       var onlyName;
       var userName;
