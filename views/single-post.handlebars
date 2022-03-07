@@ -9,7 +9,7 @@
             <p class="img-info-text">
                 <span style="font-weight: bold; font-size: 20px">{{post_data.user.username}}</span><br></br>
                 <span style="font-weight: bold">{{post_data.post_title}}</span> {{post_data.post_description}}<br></br>
-                <span style="font-weight: bold">Amount: ${{post_data.price}}</span>
+                <span style="font-weight: bold">Amount: <span style="font-weight: normal">${{post_data.price}}</span></span>
             </p>
         </div>
         {{#if loggedIn}}
@@ -26,11 +26,11 @@
         </div>
         {{else}}
         <div class="prevent-post">
-            <p>You need to be logged in to post comments <a href="/login">Login Here</a></p>
+            <p>You need to be logged in to post comments. <a href="/login">Login Here</a></p>
         </div>
         {{/if}}
     </div>
-    {{#each post_data.comments as |post| }}
+    {{#each post_data.comments as |post|}}
     <li>
         {{> comments post }}
     </li>
