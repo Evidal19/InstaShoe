@@ -27,8 +27,10 @@ async function loginFormHandler(event) {
 
   console.log("login form handler");
 
-  const username = document.querySelector("#username").value.trim();
-  const password = document.querySelector("#password").value.trim();
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+  console.log(username);
+  console.log(password);
 
   if (username && password) {
     const response = await fetch("/api/users/login", {
@@ -47,11 +49,13 @@ async function loginFormHandler(event) {
     }
   } else {
     alert('username or password incorrect');
+    console.log('username or password is incorrect');
   }
 }
 
-document.querySelector("#submit-btn")
-  .addEventListener("click", loginFormHandler);
+document.querySelector(".login-form")
+  .addEventListener("submit", loginFormHandler);
+  // #submit-btn
 
 document.querySelector('#button-sign-up')
   .addEventListener('click', signupFormHandler);
