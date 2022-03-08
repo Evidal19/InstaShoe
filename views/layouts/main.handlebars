@@ -52,7 +52,7 @@
       {{!-- <input id="searchbar_input" name="searchbar_input" type="text" placeholder=" Search " class="col s9 offset-s1" onclick="InstaBar()" /> --}}
       <i class="material-icons white-text search_icon" id="search_icon_click">search</i>
       <div class="filter">
-      <input type="text" id="the-filter" placeholder="Search "/>
+        <input type="text" id="the-filter" placeholder="Search "/>
         <ul id="the-list">
           {{#each post_data as |post|}}
           <li><a href="/api/users/{{post.user.id}}">{{post.user.username}}</a></li>
