@@ -512,9 +512,9 @@ input[type="submit"] {
   margin-top: -85px;
 }
 
-/* #paypal-button{
+#paypal-button{
   padding: 70px 0px 20px 0px;
-} */
+}
 
 @media screen and (max-width: 300px) {
   * {
@@ -541,11 +541,5 @@ input[type="submit"] {
     width: 100%;
     overflow-x: hidden;
     overflow-y: hidden;
-  }
-}
-
-@media (min-width:200px){
-  #top-logo{
-    padding: 20px 0px 20px 0px; 
   }
 }
