@@ -1,1 +1,26 @@
-<p>This page render</p>
+{{!-- display user information --}}
+<div class="body-img">
+    <div class="body-sections-img">
+        <div class="post-img">
+            <img src="/api/posts/images/{{file_src}}" alt="" style="max-width: 30rem; margin-top: 5rem;" />
+        </div>
+        <div class="img-info-description">
+            <p class="img-info-text">
+                <span style="font-weight: bold; font-size: 20px">{{user.dataValues.username}}</span><br></br>
+                {{#each user}}
+                <span style="font-weight: bold">{{!-- user.dataValues.posts.post_title --}}</span>
+                {{!-- user.dataValues.posts.post_description --}}<br></br>
+                <span style="font-weight: bold">{{!--Amount: --}}</span>{{!-- user.dataValues.posts.price --}}
+                {{/each}}
+            </p>   
+        </div>
+        {{!-- <div class="post-btns" data-post-id="id">
+            <span hidden class="purchase_amount"></span>
+            <span hidden class="user_id"></span>
+            <span hidden class="post_id"></span>
+            <span hidden class="post_user_id"></span>
+            <button type="button" onclick="location.href = '/post/{{id}}'" class="comment-btn" id="btn-one">Comment</button>
+            <button type="button" onclick="location.href = '/paypal/{{id}}'" id="btn-one">Buy</button>
+        </div> --}}
+    </div>
+</div>
