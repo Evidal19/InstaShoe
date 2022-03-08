@@ -31,9 +31,9 @@
           <a href="/login" class="nav-link">Login</a>
           {{/if}}
         </li>
-         <li class="nav-item">
-              <a href="/home" class="nav-link">Homepage</a>
-            </li>
+        <li class="nav-item">
+          <a href="/home" class="nav-link">Homepage</a>
+        </li>
       </ul>
       <button class="hamburger">
         <a href="#" data-target="mobile-demo" class="sidenav-trigger show-on-large">
@@ -47,22 +47,23 @@
         {{#if loggedIn}}
         <p class="greetings">Hello, {{instaUserName}}</p>
         {{/if}}
-      </div>
-        
-  
-      <div class="filter">
-        <input type="text" id="the-filter" placeholder="Search "/>
+        <div class="filter">
+        <input type="text" id="the-filter" placeholder="Search " />
         <ul id="the-list">
           {{#each post_data as |post|}}
           <li><a href="/api/users/{{post.user.id}}">{{post.user.username}}</a></li>
           {{/each}}
         </ul>
       </div>
+      </div>
+
+
+      
     </div>
 
     {{{body}}}
     </section>
-    <script src="/javascript/dashboard.js"></script>  
+    <script src="/javascript/dashboard.js"></script>
     <script src="/javascript/login.js"></script>
     <script src="/javascript/logout.js"></script>
     <script src="/javascript/buy.js"></script>
