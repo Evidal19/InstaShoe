@@ -129,56 +129,14 @@ h2 {
 
 } */ 
 
-.login-container p {
-  margin-top: 15px;
+.filter {
+  width: 270px;
+  margin-left: 1068px;
 }
 
-.login-container a,
-.prevent-post a {
-  color: blue;
-  text-decoration: underline;
+#the-list a {
+  color: rgb(0, 0, 0);
 }
-
-.login-container a:active,
-.prevent-post a:active {
-  opacity: 0.2;
-  text-decoration: none;
-  color: purple;
-}
-
-#myUL {
-  /* Remove default list styling */
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  margin-top: 73px;
-  position: absolute;
-}
-
-#myUL li a {
-  border: 1px solid rgb(255, 255, 255, 0);
-  margin-top: -1px;
-  background-color: rgb(255, 255, 255, 0);
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: rgb(255, 255, 255, 0);
-  display: block;
-}
-
-/* use as temporary replacement for toggle function, START */
-#myUL li a:hover {
-  border: 1px solid #ddd;
-  background-color: #f6f6f6;
-  color: black;
-}
-/* END */
-
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-
-/* SEARCH BAR END  */
 
 #top-logo {
   top: 0;
