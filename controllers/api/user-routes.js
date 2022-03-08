@@ -66,22 +66,28 @@ router.post("/login", (req, res) => {
   }).then((dbUserData) => {
     if (!dbUserData) {
       res.status(400).json({ message: "No user with that username!" });
+      console.log('no user w/ username');
       return;
     }
-    
-    var validPassword;
-    
-    if(req.body.password === dbUserData.dataValues.password) {
-      validPassword = true;
-    }
-    else {
-      validPassword = false;
-    }
-  
-    console.log(validPassword);
 
-    if (validPassword === false) {
+    const validPassword = dbUserData.checkPassword(req.body.password);
+    
+    // var validPassword;
+    // console.log(dbUserData);
+    // console.log(dbUserData.dataValues.password);
+    
+    // if(req.body.password === dbUserData.dataValues.password) {
+    //   validPassword = true;
+    // }
+    // else {
+    //   validPassword = false;
+    // }
+  
+    // console.log(validPassword);
+
+    if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
+      console.log('wrong password');
       return;
     }
 
