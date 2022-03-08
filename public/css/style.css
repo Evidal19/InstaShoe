@@ -514,9 +514,9 @@ input[type="submit"] {
   width: 100%;
 }
 
-/* #paypal-button{
+#paypal-button{
   padding: 70px 0px 20px 0px;
-} */
+}
 
 @media screen and (max-width: 300px) {
   * {
@@ -528,7 +528,7 @@ input[type="submit"] {
   }
 }
 
-@media (min-width: 300px) {
+@media (max-width: 300px) {
   .nav-wrapper {
     width: 100%;
     overflow-x: hidden;
@@ -536,7 +536,7 @@ input[type="submit"] {
 }
 
 
-@media (min-width: 300px) {
+@media (max-width: 300px) {
   #the-filter{
     display: flex;
     flex-wrap: wrap;
@@ -546,7 +546,7 @@ input[type="submit"] {
   }
 }
 
-@media (min-width:200px){
+@media (max-width:200px){
   #top-logo{
     padding: 20px 0px 20px 0px; 
   }
