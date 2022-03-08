@@ -156,4 +156,29 @@ router.get("/dashboard", withAuth, (req, res) => {
   });
 });
 
+router.get('/paypal/:post_id', (req, res) => {
+  const post_id = req.params.post_id;
+
+  console.log("getting paypal...");
+
+  Post.findOne({
+    where: {
+      id: post_id
+    },
+    include: [
+      {
+        model: User,
+      },
+      {
+        model: Purchase,
+      },
+    ],
+  })
+  .then(response => {
+    const post_data = response.get({ plain: true });
+    console.log(post_data);
+    res.render('paypal', { post_data });
+  }).catch(err => res.json(err));
+})
+
 module.exports = router;
