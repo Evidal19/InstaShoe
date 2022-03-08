@@ -108,7 +108,6 @@ h2 {
   justify-content: space-around;
 }
 
-/* SEARCH BAR START  */
 #searchbar_input {
   position: absolute;
   top: 0;
@@ -136,7 +135,6 @@ h2 {
 
 #the-list {
   background-color: rgb(245, 239, 231);
-  visibility: hidden;
 }
 
 #the-list a {
