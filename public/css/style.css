@@ -512,6 +512,10 @@ input[type="submit"] {
   margin-top: -85px;
 }
 
+#paypal-button{
+  padding: 70px 0px 20px 0px;
+}
+
 @media screen and (max-width: 300px) {
   * {
     box-sizing: border-box;
