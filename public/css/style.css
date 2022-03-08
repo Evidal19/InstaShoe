@@ -123,6 +123,15 @@ h2 {
   right: 0;
 }
 
+.filter {
+  width: 270px;
+  margin-left: 1068px;
+}
+
+#the-list a {
+  color: rgb(0, 0, 0);
+}
+
 #top-logo {
   /* position: absolute;
   top: 0;
