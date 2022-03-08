@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
 const { User, Post, Purchase, Sold, Comment } = require("../models");
+const withAuth = require('../utils/auth');
 
 // get homepage to render
 router.get("/home", (req, res) => {
@@ -26,6 +27,7 @@ router.get("/home", (req, res) => {
         element.current_user_id = userId;
       }
       console.log(post_data);
+      console.log(req.session.loggedIn);
 
       var onlyName;
       var userName;
@@ -76,9 +78,21 @@ router.get("/post/:id", (req, res) => {
 
       console.log(post_data);
 
+      var onlyName;
+      var userName;
+
+      if (req.session.username) {
+        userName = JSON.stringify(req.session.username);
+        onlyName = userName.replace(/["]+/g, '');
+      }
+      else {
+        onlyName = '';
+      }
+
       res.render("single-post", {
-        post_data: post_data
-        // loggedIn: req.session.loggedIn
+        post_data: post_data,
+        loggedIn: req.session.loggedIn,
+        instaUserName: onlyName
       });
     })
     .catch((err) => {
@@ -102,12 +116,39 @@ router.get("/register", (req, res) => {
   res.render("register");
 });
 
-router.get("/post-upload", (req, res) => {
-  res.render("post");
+router.get("/post-upload", withAuth, (req, res) => {
+  var onlyName;
+  var userName;
+
+  if (req.session.username) {
+    userName = JSON.stringify(req.session.username);
+    onlyName = userName.replace(/["]+/g, '');
+  }
+  else {
+    onlyName = '';
+  }
+  res.render("post", { 
+    loggedIn: req.session.loggedIn,
+    instaUserName: onlyName
+  });
 });
 
-router.get("/dashboard", (req, res) => {
-  res.render("dashboard");
+router.get("/dashboard", withAuth, (req, res) => {
+  var onlyName;
+  var userName;
+  console.log(req.session.loggedIn)
+
+  if (req.session.username) {
+    userName = JSON.stringify(req.session.username);
+    onlyName = userName.replace(/["]+/g, '');
+  }
+  else {
+    onlyName = '';
+  }
+  res.render("dashboard", { 
+    loggedIn: req.session.loggedIn,
+    instaUserName: onlyName
+  });
 });
 
 module.exports = router;
