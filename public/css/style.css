@@ -538,7 +538,6 @@ input[type="submit"] {
   display: flex;
   flex-direction: column;
   line-height: 15px;
-  width: 50%;
   justify-content: center;
 }
 
@@ -568,16 +567,12 @@ input[type="submit"] {
   #searchbar_input {
     width: 20%;
     cursor: pointer;
-    /* padding-right: 1%;
-    padding-left: 2%;
-    right: 0px; */
+     /* padding-right: 1%; */
+    padding-left: 2%; 
+    /* right: 0px; */ 
     overflow-x: hidden;
+    /* justify-content: right; */
+    float: right;
   }
 }
 
-@media (min-width: 300px) {
-  homepage {
-    width: 100%;
-    overflow-x: hidden;
-  }
-}
