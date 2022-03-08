@@ -508,6 +508,10 @@ input[type="submit"] {
   padding-top: 4%;
 }
 
+.header-img{
+  margin-top: -85px;
+}
+
 @media screen and (max-width: 300px) {
   * {
     box-sizing: border-box;
