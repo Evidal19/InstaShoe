@@ -574,3 +574,9 @@ input[type="submit"] {
   }
 }
 
+@media (min-width: 300px) {
+   homepage{
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
