@@ -49,7 +49,12 @@ router.get("/:id", (req, res) => {
         res.status(404).json({ message: "No user found with that id" });
         return;
       }
-      res.json({ message: "success", user });
+      // res.json({ message: "success", user });
+      console.log(user);
+
+      res.render('user', {
+        user,
+      });
     })
     .catch((err) => res.status(500).json(err));
 });
