@@ -546,12 +546,16 @@ input[type="submit"] {
     overflow-y: hidden;
   }
 }
-<<<<<<< HEAD
-=======
 
 @media (max-width:200px){
   #top-logo{
     padding: 20px 0px 20px 0px; 
   }
 }
->>>>>>> 6419b4084c0cc5a9144b491bd7f01b559f25a64f
+
+@media screen and (max-width: 768px) {
+  .filter {
+    position: relative;
+    left: 0;
+  }
+}
