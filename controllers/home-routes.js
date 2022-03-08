@@ -111,6 +111,11 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get("/logout", (req, res) => {
+  req.session.loggedIn = false;
+  res.render("login");
+});
+
 // get sign-up page to render
 router.get("/register", (req, res) => {
   res.render("register");
