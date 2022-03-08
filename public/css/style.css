@@ -45,17 +45,12 @@ h2 {
   width: 100%;
 }
 
-
 #top-shoe {
   text-align: center;
 }
 
-/* .header-img {
-  width: 100%;
-} */
-
 .greetings {
-  font-size: 22px; 
+  font-size: 22px;
 }
 
 #login-nav {
@@ -113,26 +108,32 @@ h2 {
   position: absolute;
   top: 0;
   width: 22%;
-  right: 10px;
+  /* right: -950px; */
   color: white;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #search_icon_click {
   position: absolute;
   top: 0;
-  right: 0;
+  /* right: -970px; */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .login-container p {
   margin-top: 15px;
 }
 
-.login-container a, .prevent-post a {
+.login-container a,
+.prevent-post a {
   color: blue;
   text-decoration: underline;
 }
 
-.login-container a:active, .prevent-post a:active {
+.login-container a:active,
+.prevent-post a:active {
   opacity: 0.2;
   text-decoration: none;
   color: purple;
@@ -143,28 +144,26 @@ h2 {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  width: 300px;
-  margin-left: 1043px;
   margin-top: 73px;
   position: absolute;
 }
 
 #myUL li a {
-  border: 1px solid rgb(255, 255, 255, 0); 
-  margin-top: -1px; 
-  background-color: rgb(255, 255, 255, 0); 
-  padding: 12px; 
-  text-decoration: none; 
-  font-size: 18px; 
+  border: 1px solid rgb(255, 255, 255, 0);
+  margin-top: -1px;
+  background-color: rgb(255, 255, 255, 0);
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
   color: rgb(255, 255, 255, 0);
-  display: block; 
+  display: block;
 }
 
 /* use as temporary replacement for toggle function, START */
 #myUL li a:hover {
-  border: 1px solid #ddd; 
+  border: 1px solid #ddd;
   background-color: #f6f6f6;
-  color: black; 
+  color: black;
 }
 /* END */
 
@@ -175,21 +174,9 @@ h2 {
 /* SEARCH BAR END  */
 
 #top-logo {
-  /* position: absolute;
   top: 0;
-  width: 100%; */
-  /* position: absolute; */
-  /* top: 0;
-  width: 100%; */
-  top: 0;
-    width: 100%;
-    /* display: flex;
-    flex-wrap: wrap;
-    flex-direction: row; */
-  /* display: flex;
-  flex-wrap: wrap; */
+  width: 100%;
 }
-
 
 #btn-one {
   color: cornsilk;
@@ -248,7 +235,6 @@ button:focus {
 }
 
 #nude-shoe {
-  /* padding: 140px 0px 10px 40px; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -302,7 +288,7 @@ button:focus {
 
 .login-container {
   padding: 275px 290px 63px 40px;
- }
+}
 
 #button-login {
   color: cornsilk;
@@ -469,7 +455,7 @@ input[type="submit"] {
   margin: 0px 0px 25px 0px;
 }
 
-#button-change-pic{
+#button-change-pic {
   color: cornsilk;
   background-color: black;
   border-radius: 12px;
@@ -590,7 +576,7 @@ input[type="submit"] {
 }
 
 @media (min-width: 300px) {
-   homepage{
+  homepage {
     width: 100%;
     overflow-x: hidden;
   }
