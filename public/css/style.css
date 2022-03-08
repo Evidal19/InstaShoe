@@ -103,14 +103,16 @@ h2 {
   justify-content: space-around;
 }
 
-/* SEARCH BAR START  */
-/* #searchbar_input {
-  /* top: 0; */
-  /* width: 22%;
+#searchbar_input {
+  position: absolute;
+  top: 0;
+  width: 22%;
+  right: 10px;
   color: white;
   display: flex;
   flex-wrap: wrap;
   float: right;
+}
   /* position: absolute; */
     /* top: 24px;
     right: -128px;
