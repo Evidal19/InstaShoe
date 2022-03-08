@@ -45,17 +45,12 @@ h2 {
   width: 100%;
 }
 
-
 #top-shoe {
   text-align: center;
 }
 
-.header-img {
-  width: 100%;
-}
-
 .greetings {
-  font-size: 22px; 
+  font-size: 22px;
 }
 
 #login-nav {
@@ -114,18 +109,32 @@ h2 {
   width: 22%;
   right: 10px;
   color: white;
+  display: flex;
+  flex-wrap: wrap;
+  float: right;
 }
+  /* position: absolute; */
+    /* top: 24px;
+    right: -128px;
+    z-index: 100; */
+
 
 #search_icon_click {
+   top: 0; 
+  display: flex;
+  flex-wrap: wrap;
+  float: right;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 24px;
+  right: -124px;
+  z-index: 100;
+
 }
 
 .filter {
   position: absolute;
   width: 270px;
-  margin-top: -110px;
+  margin-top: -82px;
   margin-left: 1070px;
 }
 
@@ -142,21 +151,9 @@ h2 {
 }
 
 #top-logo {
-  /* position: absolute;
   top: 0;
-  width: 100%; */
-  /* position: absolute; */
-  /* top: 0;
-  width: 100%; */
-  top: 0;
-    width: 100%;
-    /* display: flex;
-    flex-wrap: wrap;
-    flex-direction: row; */
-  /* display: flex;
-  flex-wrap: wrap; */
+  width: 100%;
 }
-
 
 #btn-one {
   color: cornsilk;
@@ -215,7 +212,6 @@ button:focus {
 }
 
 #nude-shoe {
-  /* padding: 140px 0px 10px 40px; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -269,7 +265,7 @@ button:focus {
 
 .login-container {
   padding: 275px 290px 63px 40px;
- }
+}
 
 #button-login {
   color: cornsilk;
@@ -436,7 +432,7 @@ input[type="submit"] {
   margin: 0px 0px 25px 0px;
 }
 
-#button-change-pic{
+#button-change-pic {
   color: cornsilk;
   background-color: black;
   border-radius: 12px;
@@ -519,7 +515,6 @@ input[type="submit"] {
   display: flex;
   flex-direction: column;
   line-height: 15px;
-  width: 50%;
   justify-content: center;
 }
 
@@ -545,14 +540,13 @@ input[type="submit"] {
     overflow-x: hidden;
   }
 }
-@media (min-width: 300px) {
+/* @media (min-width: 300px) {
   #searchbar_input {
     width: 20%;
     cursor: pointer;
-    /* padding-right: 1%;
-    padding-left: 2%;
-    right: 0px; */
+    padding-left: 2%; 
     overflow-x: hidden;
+    float: right;
   }
-}
+} */
 
