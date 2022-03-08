@@ -104,23 +104,30 @@ h2 {
 }
 
 /* SEARCH BAR START  */
-#searchbar_input {
-  position: absolute;
-  top: 0;
-  width: 22%;
-  /* right: -950px; */
+/* #searchbar_input {
+  /* top: 0; */
+  /* width: 22%;
   color: white;
   display: flex;
   flex-wrap: wrap;
-}
+  float: right;
+  /* position: absolute; */
+    /* top: 24px;
+    right: -128px;
+    z-index: 100; */
 
-#search_icon_click {
-  position: absolute;
-  top: 0;
-  /* right: -970px; */
-  display: flex;
+
+/* #search_icon_click {
+  /* top: 0; */
+  /* display: flex;
   flex-wrap: wrap;
-}
+  float: right;
+  position: absolute;
+  top: 24px;
+  right: -124px;
+  z-index: 100;
+
+} */ 
 
 .login-container p {
   margin-top: 15px;
@@ -563,16 +570,13 @@ input[type="submit"] {
     overflow-x: hidden;
   }
 }
-@media (min-width: 300px) {
+/* @media (min-width: 300px) {
   #searchbar_input {
     width: 20%;
     cursor: pointer;
-     /* padding-right: 1%; */
     padding-left: 2%; 
-    /* right: 0px; */ 
     overflow-x: hidden;
-    /* justify-content: right; */
     float: right;
   }
-}
+} */
 
