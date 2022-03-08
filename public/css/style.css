@@ -136,6 +136,7 @@ h2 {
 
 #the-list {
   background-color: rgb(245, 239, 231);
+  visibility: hidden;
 }
 
 #the-list a {
