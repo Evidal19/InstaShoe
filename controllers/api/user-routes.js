@@ -1,6 +1,17 @@
 const router = require("express").Router();
 const { User, Post } = require("../../models");
+const { uploadFile} = require("../../s3");
 // expects /api/users/
+
+// file system
+const fs = require("fs");
+const util = require("util");
+
+const unlinkFile = util.promisify(fs.unlink);
+
+// multer
+const multer = require("multer");
+const upload = multer({ dest: "../../public/assets/images" });
 
 // expects /api/users/
 router.get("/", (req, res) => {
@@ -29,7 +40,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ["post_title", "post_description"],
+        // attributes: ["post_title", "post_description"],
       },
     ],
   })
@@ -38,23 +49,50 @@ router.get("/:id", (req, res) => {
         res.status(404).json({ message: "No user found with that id" });
         return;
       }
-      res.json({ message: "success", user });
+      // res.json({ message: "success", user });
+      console.log(user);
+
+      res.render('user', {
+        user,
+      });
     })
     .catch((err) => res.status(500).json(err));
 });
 
 // expects /api/users/
-router.post("/", (req, res) => {
+router.post("/", upload.single("image"), async (req, res) => {
   // create a new user, will take a username/email and hashed password
-  User.create({
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password,
-  })
-    .then((user) => {
-      res.json({ message: "success", user });
+  const file = req.file;
+  
+  console.log("PROFILE-PICTURE-FILE: " + file)
+  if (!file) {
+    User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
     })
-    .catch((err) => res.status(500).json(err));
+      .then((user) => {
+        res.json({ message: "success", user });
+      })
+      .catch((err) => res.status(500).json(err));
+  } else {
+    const result = await uploadFile(file);
+    await unlinkFile(file.path);
+
+    User.create({
+      username: req.body.username,
+      email: req.body.email,
+      password: req.body.password,
+      file_src: result.Key
+    })
+      .then((user) => {
+        if (user) {
+          res.redirect('/login')
+        }
+      })
+      .catch((err) => res.status(500).json(err));
+  }
+
 });
 
 router.post("/login", (req, res) => {
@@ -65,19 +103,32 @@ router.post("/login", (req, res) => {
     },
   }).then((dbUserData) => {
     if (!dbUserData) {
-      res.status(400).json({ message: "No user with that email address!" });
+      res.status(400).json({ message: "No user with that username!" });
+      console.log('no user w/ username');
       return;
     }
 
     const validPassword = dbUserData.checkPassword(req.body.password);
-    console.log(validPassword);
+
+    // var validPassword;
+    // console.log(dbUserData);
+    // console.log(dbUserData.dataValues.password);
+
+    // if(req.body.password === dbUserData.dataValues.password) {
+    //   validPassword = true;
+    // }
+    // else {
+    //   validPassword = false;
+    // }
+
+    // console.log(validPassword);
 
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
+      console.log('wrong password');
       return;
     }
 
-    
     req.session.save(() => {
       // declare session variables
       req.session.user_id = dbUserData.id;

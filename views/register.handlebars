@@ -1,7 +1,7 @@
 {{!-- display sign-up page --}}
 
 <div class="login-container">
-  <form id="submit-form">
+  <form id="submit-form" method="POST" action="/api/users" enctype="multipart/form-data">
     <ul>
       <label for="username">Create username:</label>
       <input type="text" id="username" name="username" /><br /><br />
@@ -9,12 +9,14 @@
       <input type="text" id="email" name="email" /><br /><br />
       <label for="password">Create password:</label>
       <input type="text" id="password" name="password" /><br /><br />
-      <form id="new-post-form" method="POST" action="/api/posts" enctype="multipart/form-data">Upload a photo
-        <input type="file" name="image" accept="image/*" />
-       <button id="button-sign-up" onclick="('going to comment page')">Submit</button>
+      Upload a photo 
+      <input type="file" name="image" accept="image/*" /> 
+      <button id="button-sign-up" onclick="('going to comment page')">Submit</button>
+      </form>
     </ul>
   </form>
+  <p>Already have an account? <a href="/login">Login Here</a></p>
 </div>
 </body>
 
-<script src="/javascript/register.js"></script>
+<!--script src="/javascript/register.js"></script --> 

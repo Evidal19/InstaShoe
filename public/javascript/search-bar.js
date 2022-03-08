@@ -1,20 +1,23 @@
-function InstaBar() {
-    // Declare variables
-    var input, filter, ul, li, a, i, txtValue;
-    input = document.getElementById('searchbar_input');
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName('li');
-    // li = document.getElementById('list-e');
+var listItems = document.querySelector('#the-list');
+listItems.style.visibility = 'hidden';
+
+window.addEventListener("load", () => {
+  // get HMTL elements
+  var filter = document.getElementById('the-filter'), // search box
+      list = document.querySelectorAll('#the-list li'); // all list items
   
-    // Loop through all list items, and hide those who don't match the search query
-    for (i = 0; i < li.length; i++) {
-      a = li[i].getElementsByTagName("a")[0];
-      txtValue = a.textContent || a.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        li[i].style.display = "";
-      } else {
-        li[i].style.display = "none";
-      }
+  // attach keyup listener to search box
+  filter.onkeyup = () => {
+    listItems.style.visibility = 'visible';
+  
+    // get current search term
+    let search = filter.value.toLowerCase();
+
+    // loop through items, show only items that match search
+    for (let i of list) {
+      let item = i.innerHTML.toLowerCase();
+      if (item.indexOf(search) == -1) { i.classList.add('hide'); }
+      else { i.classList.remove('hide'); }
     }
-}
+  };
+});
