@@ -25,7 +25,11 @@
           <a href="/post-upload" class="nav-link">Make a post</a>
         </li>
         <li class="nav-item">
-          <a href="/login" class="nav-link">Logout</a>
+          {{#if loggedIn}}
+          <a href="/logout" class="nav-link">Logout</a>
+          {{else}}
+          <a href="/login" class="nav-link">Login</a>
+          {{/if}}
         </li>
          <li class="nav-item">
               <a href="/home" class="nav-link">Homepage</a>
@@ -44,6 +48,7 @@
         <p class="greetings">Hello, {{instaUserName}}</p>
         {{/if}}
       </div>
+        
       <input id="searchbar_input" name="searchbar_input" type="text" placeholder=" Search " class="col s9 offset-s1" onclick="InstaBar()" />
       <i class="material-icons white-text search_icon" id="search_icon_click">search</i>
       <ul id="myUL">
