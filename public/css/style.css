@@ -137,6 +137,7 @@ h2 {
 
 #the-list {
   background-color: rgb(245, 239, 231);
+  position: absolute;
 }
 
 #the-list a {
@@ -508,9 +509,11 @@ input[type="submit"] {
   padding-top: 4%;
 }
 
+
 .header-img{
-  margin-top: -85px;
+  width: 100%;
 }
+
 
 #paypal-button{
   padding: 70px 0px 20px 0px;
