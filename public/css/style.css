@@ -124,8 +124,18 @@ h2 {
 }
 
 .filter {
+  position: absolute;
   width: 270px;
-  margin-left: 1068px;
+  margin-top: -110px;
+  margin-left: 1070px;
+}
+
+#the-filter {
+  color: rgb(255, 255, 255);
+}
+
+#the-list {
+  background-color: rgb(245, 239, 231);
 }
 
 #the-list a {
