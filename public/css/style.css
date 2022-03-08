@@ -126,9 +126,9 @@ h2 {
 }
 
 .filter {
-  width: 270px;
-  margin-top: -82px;
-  margin-left: 1070px;
+  position: absolute;
+  top: -2%;
+  left: 65%;
 }
 
 #the-filter {
@@ -138,6 +138,7 @@ h2 {
 #the-list {
   background-color: rgb(245, 239, 231);
   position: absolute;
+  font-size: large;
 }
 
 #the-list a {

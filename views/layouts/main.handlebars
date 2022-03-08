@@ -43,22 +43,26 @@
       </button>
 
       <div id="top-logo" class="logo center black white-text">
-        InstaShoe
+        <div>
+          InstaShoe
+        </div>
         {{#if loggedIn}}
-        <p class="greetings">Hello, {{instaUserName}}</p>
+          <div>
+            <p class="greetings">Hello, {{instaUserName}}</p>
+          </div>
         {{/if}}
         <div class="filter">
-        <input type="text" id="the-filter" placeholder="Search " />
-        <ul id="the-list">
-          {{#each post_data as |post|}}
-          <li><a href="/api/users/{{post.user.id}}">{{post.user.username}}</a></li>
-          {{/each}}
-        </ul>
-      </div>
+          <input type="text" id="the-filter" placeholder="Search " />
+          <ul id="the-list">
+            {{#each post_data as |post|}}
+            <li><a href="/api/users/{{post.user.id}}">{{post.user.username}}</a></li>
+            {{/each}}
+          </ul>
+        </div>
       </div>
 
 
-      
+
     </div>
 
     {{{body}}}
