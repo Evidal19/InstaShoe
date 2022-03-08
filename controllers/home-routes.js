@@ -21,10 +21,13 @@ router.get("/home", (req, res) => {
     .then((dbPostData) => {
      // console.log("DBPOSTDATA" + JSON.stringify(dbPostData));
       const post_data = dbPostData.map((post) => post.get({ plain: true }));
+
+      // get id of current user
       for (let i = 0; i < post_data.length; i++) {
         const element = post_data[i];
         element.current_user_id = userId;
       }
+
       console.log(post_data);
 
       var onlyName;
