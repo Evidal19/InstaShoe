@@ -1,0 +1,18 @@
+<div id="edit-img">
+    <div style="margin-top: 4rem;">
+        <h1>Edit Post</h1>
+    </div>
+    
+    <div style="edit-container">
+        <form id="edit-form" method="POST" action="/api/posts" enctype="multipart/form-data">
+        
+        <input type="file" name="image" accept="image/*" />
+
+        <input type="text" name="edit_title" id="edit_title">
+        <label for="edit_title"><strong>Edit Description</strong> </label>
+
+        </form>
+    </div>
+</div>
+
+<script src="/javascript/edit-post.js"></script>

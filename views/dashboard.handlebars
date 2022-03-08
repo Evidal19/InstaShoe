@@ -3,7 +3,7 @@
     <form id="profile-img" class="profile-start" action="#">
     
       <div class="profile-sections-img">
-       <form id="new-post-form" method="POST" action="/api/posts" enctype="multipart/form-data">Change profile picture
+       <form id="new-post-form" method="POST" action="/api/images/(user.file_src)" enctype="multipart/form-data">Change profile picture
         <input type="file" name="image" accept="image/*" />
         <button id="button-change-pic">Submit</button>
       </div>
@@ -27,9 +27,9 @@
            <p>
              
            </p>
-            <button id="button-dashboard-2"><a href="./javascript/edit-post.js">Edit Post</a></button> <br></br>
-            <button id="button-dashboard-3"><a href= "./javascript/delete-post.js">Delete Post</a></button><br></br>
-            <button id="button-dashboard-4"><a href="./javascript/sold.js">Sold</a></button><br></br>
+            <button id="button-dashboard-2"><a href="/edit-post.js">Edit Post</a></button> <br></br>
+            <button id="button-dashboard-3"><a href= "/delete-post.js">Delete Post</a></button><br></br>
+            <button id="button-dashboard-4"><a href="/sold.js">Sold</a></button><br></br>
 
           </div>
       </div>  
