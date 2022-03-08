@@ -525,7 +525,7 @@ input[type="submit"] {
     overflow-x: hidden;
   }
 }
-@media (min-width: 300px) {
+/* @media (min-width: 300px) {
   #searchbar_input {
     width: 20%;
     cursor: pointer;
@@ -533,7 +533,7 @@ input[type="submit"] {
     overflow-x: hidden;
     float: right;
   }
-}
+} */
 
 /* @media (min-width: 300px) {
   .filter {
@@ -544,23 +544,18 @@ input[type="submit"] {
     flex-wrap: wrap;
     float: right;
     position: absolute;
-    top: 24px;
     right: -124px;
     z-index: 100;
   }
-} */
+}  */
 
-/* @media (min-width: 300px) {
+@media (min-width: 300px) {
   #the-filter{
-width: 270px;
-    margin-top: -82px;
-    margin-left: 1070px;
+    width: 138px;
     display: flex;
     flex-wrap: wrap;
     float: right;
     position: absolute;
-    top: 24px;
-    right: -124px;
-    z-index: 100;
+    
   }
-} */
+}
