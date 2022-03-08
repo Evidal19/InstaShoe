@@ -65,7 +65,8 @@ router.post("/login", (req, res) => {
     },
   }).then((dbUserData) => {
     if (!dbUserData) {
-      res.status(400).json({ message: "No user with that email address!" });
+      res.status(400).json({ message: "No user with that username!" });
+      console.log('no username');
       return;
     }
 
@@ -74,6 +75,7 @@ router.post("/login", (req, res) => {
 
     if (!validPassword) {
       res.status(400).json({ message: "Incorrect password!" });
+      console.log('incorrect password');;
       return;
     }
 
