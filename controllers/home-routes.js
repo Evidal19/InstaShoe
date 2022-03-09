@@ -184,4 +184,10 @@ router.get('/paypal/:post_id', (req, res) => {
   }).catch(err => res.json(err));
 })
 
+router.get ("/", (req, res) => {
+  console.log(req.accepted)
+ res.redirect("/home")
+return;   
+})
+
 module.exports = router;
