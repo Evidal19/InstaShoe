@@ -63,21 +63,13 @@ router.get("/images/:key", (req, res) => {
   readStream.pipe(res);
 });
 
-router.post("/", upload.single("image"), async (req, res) => {
-  const file = req.file;
-
-  if (!file) {
-    res.send("No file uploaded");
-    // if file was sent, upload it to the AWS server
-  } else {
-    const result = await uploadFile(file);
-    await unlinkFile(file.path);
+router.post("/", (req, res) => {
 
     console.log("user-id " + req.session.user_id);
     Post.create({
       post_title: req.body.post_title,
       post_description: req.body.post_description,
-      file_src: result.Key,
+      file_src: req.body.file_src,
       date: new Date(),
       user_id: req.session.user_id,
       price: req.body.price,
@@ -90,7 +82,6 @@ router.post("/", upload.single("image"), async (req, res) => {
               message:
                 "Post needs post_title, post_description, file_src and user_id",
             });
-          return;
         }
         // res.json({ message: "success", newPost });
         // window.location.href = "/home";
@@ -98,7 +89,7 @@ router.post("/", upload.single("image"), async (req, res) => {
       })
       .catch((err) => res.status(500).json(err));
   }
-});
+);
 
 router.put("/:post_id", (req, res) => {
   const postId = req.params.post_id;

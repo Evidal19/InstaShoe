@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Post } = require("../../models");
-const { uploadFile} = require("../../s3");
+const s3 = require("../../s3");
 const path=require("path")
 // expects /api/users/
 
@@ -8,11 +8,15 @@ const path=require("path")
 const fs = require("fs");
 const util = require("util");
 
-const unlinkFile = util.promisify(fs.unlink);
 
+<<<<<<< HEAD
 // multer
 const multer = require("multer");
 const upload = multer({ dest: path.join(__dirname, "/upload") });
+=======
+
+
+>>>>>>> 1ffeeb68672e9cbd16b0ce7fd9e3f59be3f8c01b
 
 // expects /api/users/
 router.get("/", (req, res) => {
@@ -23,6 +27,13 @@ router.get("/", (req, res) => {
     })
     .catch((err) => res.status(500).json(err));
 });
+
+router.get('/s3url', async (req, res) => {
+  const url = await s3.generateUploadURL();
+  console.log(url);
+  res.send({url});
+
+})
 
 // expects /api/users/2
 router.get("/:id", (req, res) => {
@@ -60,42 +71,23 @@ router.get("/:id", (req, res) => {
     .catch((err) => res.status(500).json(err));
 });
 
-// expects /api/users/
-router.post("/", upload.single("image"), async (req, res) => {
-  // create a new user, will take a username/email and hashed password
-  const file = req.file;
-  
-  console.log("PROFILE-PICTURE-FILE: " + file)
-  if (!file) {
-    User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-    })
-      .then((user) => {
-        if (user) {
-          res.redirect('/login')
-        }
-        //res.json({ message: "success", user });
-      })
-      .catch((err) => res.status(500).json(err));
-  } else {
-    const result = await uploadFile(file);
-    await unlinkFile(file.path);
 
-    User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-      file_src: result.Key
+
+// expects /api/users/
+router.post("/", (req, res) => {
+  // create a new user, will take a username/email and hashed password
+  User.create({
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
+    file_src: req.body.file_src
+  })
+    .then((user) => {
+      if (user) {
+        res.redirect('/login')
+      }
     })
-      .then((user) => {
-        if (user) {
-          res.redirect('/login')
-        }
-      })
-      .catch((err) => res.status(500).json(err));
-  }
+    .catch((err) => res.status(500).json(err));
 
 });
 
