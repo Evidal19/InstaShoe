@@ -186,8 +186,7 @@ router.get('/paypal/:post_id', (req, res) => {
 
 router.get ("/", (req, res) => {
   console.log(req.accepted)
- res.redirect("/home")
-return;   
+  res.redirect("/home")
 })
 
 module.exports = router;
