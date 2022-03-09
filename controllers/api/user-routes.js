@@ -8,13 +8,7 @@ const path=require("path")
 const fs = require("fs");
 const util = require("util");
 
-const unlinkFile = util.promisify(fs.unlink);
 
-// multer
-const multer = require("multer");
-const req = require("express/lib/request");
-
-const upload = multer({ dest: path.join(__dirname, "/upload") });
 
 
 
