@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Post } = require("../../models");
 const { uploadFile} = require("../../s3");
+const path=require("path")
 // expects /api/users/
 
 // file system
@@ -11,7 +12,8 @@ const unlinkFile = util.promisify(fs.unlink);
 
 // multer
 const multer = require("multer");
-const upload = multer({ dest: "./upload" });
+
+const upload = multer({ dest: path.join(dirname__, "/upload") });
 
 // expects /api/users/
 router.get("/", (req, res) => {
