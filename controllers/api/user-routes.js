@@ -74,7 +74,10 @@ router.post("/", upload.single("image"), async (req, res) => {
       password: req.body.password,
     })
       .then((user) => {
-        res.json({ message: "success", user });
+        if (user) {
+          res.redirect('/login')
+        }
+        //res.json({ message: "success", user });
       })
       .catch((err) => res.status(500).json(err));
   } else {
