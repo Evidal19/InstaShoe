@@ -13,7 +13,7 @@ const unlinkFile = util.promisify(fs.unlink);
 // multer
 const multer = require("multer");
 
-const upload = multer({ dest: path.join(dirname__, "/upload") });
+const upload = multer({ dest: path.join(__dirname, "/upload") });
 
 // expects /api/users/
 router.get("/", (req, res) => {
