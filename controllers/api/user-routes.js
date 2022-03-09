@@ -9,14 +9,8 @@ const fs = require("fs");
 const util = require("util");
 
 
-<<<<<<< HEAD
-// multer
-const multer = require("multer");
-const upload = multer({ dest: path.join(__dirname, "/upload") });
-=======
 
 
->>>>>>> 1ffeeb68672e9cbd16b0ce7fd9e3f59be3f8c01b
 
 // expects /api/users/
 router.get("/", (req, res) => {
