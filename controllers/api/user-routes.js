@@ -12,7 +12,6 @@ const unlinkFile = util.promisify(fs.unlink);
 
 // multer
 const multer = require("multer");
-
 const upload = multer({ dest: path.join(__dirname, "/upload") });
 
 // expects /api/users/
