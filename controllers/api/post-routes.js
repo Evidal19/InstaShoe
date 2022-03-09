@@ -10,7 +10,7 @@ const unlinkFile = util.promisify(fs.unlink);
 
 // multer
 const multer = require("multer");
-const upload = multer({ dest: "../../public/assets/images" });
+const upload = multer({ dest: "api/post-routes.js");
 
 // /api/posts
 router.get("/", (req, res) => {
