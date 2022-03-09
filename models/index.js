@@ -2,7 +2,7 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 const Purchase = require('./Purchase');
-const Sold = require('./sold');
+const Sold = require('./Sold');
 
 // create associations between tables
 
