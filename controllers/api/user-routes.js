@@ -11,7 +11,7 @@ const unlinkFile = util.promisify(fs.unlink);
 
 // multer
 const multer = require("multer");
-const upload = multer({ dest: "../../public/assets/images" });
+const upload = multer({ dest: "../../public/assets" });
 
 // expects /api/users/
 router.get("/", (req, res) => {
