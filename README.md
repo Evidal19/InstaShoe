@@ -35,7 +35,7 @@ Back on the homepage, the user can also press the 'Buy' button, once the PayPal 
     * npm i sequelize
 
 ## Website Link
-<!-- insert link here -->
+https://staging-shoe.herokuapp.com
 
 ## Contribution
 Evidal19, crazypants300, CoderJ01 
