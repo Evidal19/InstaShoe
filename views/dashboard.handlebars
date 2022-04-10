@@ -1,0 +1,60 @@
+{{#if loggedIn}}
+<section id="profile" class="dashboard">
+    <form id="profile-img" class="profile-start" action="#">
+    
+      <div class="profile-sections-img">
+       <form id="new-post-form" method="POST" action="/api/images/(user.file_src)" enctype="multipart/form-data">Change profile picture
+        <input type="file" name="image" accept="image/*" />
+        <button id="button-change-pic">Submit</button>
+      </div>
+      <div class="img-info-description-dashboard">
+        <p class="img-info-text-dashboard">
+        
+      </p>
+      </div>
+    </form>
+     <button id="button-dashboard-1"><a href="/post-upload">Make Post</a></button>
+    <form id="items-for-sell" class="available-items" action="#">
+
+
+  <form id="items-for-sell" class="available-items" action="#">
+      <p id="line"> 
+        AVAILABLE SHOES
+      </p>
+      <div class="profile-selling-img">
+       
+         <div id="nude-shoe" class="available-shoe">
+           <p>
+             
+           </p>
+            <button id="button-dashboard-2"><a href="/edit-post.js">Edit Post</a></button> <br></br>
+            <button id="button-dashboard-3"><a href= "/delete-post.js">Delete Post</a></button><br></br>
+            <button id="button-dashboard-4"><a href="/sold.js">Sold</a></button><br></br>
+
+          </div>
+      </div>  
+    </form>
+
+
+ <form>
+      <form id="items-sold" class="items-sold" action="#">
+        <p id="line-2"> 
+          SOLD HISTORY
+        </p>
+        <div class="profile-selling-img">
+          
+          <div class="profile-selling-img">
+            
+     </form>
+    </body>
+
+</section>
+{{/if}}
+
+{{#if loggedIn}}
+<script src="/javascript/dashboard.js"></script>
+<script src="/public/javascript/delete-post.js"></script>
+{{/if}}
+
+
+

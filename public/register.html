@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Merriweather|Solway&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./css/style.css" rel="stylesheet" />
+    <title>InstaShoe</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav-wrapper">
+        <ul class="menu">
+          <li class="nav-item">
+            <a href="./index.html" class="nav-link">Homepage</a>
+          </li>
+          <li class="nav-item">
+             <a href="./img-upload.html" class="nav-link">Make a post</a>
+          </li>
+          <li class="nav-item">
+            <a href="./img-upload.html"  class="nav-link">Comment</a>
+          </li>
+          <li class="nav-item">
+            <a href="./login.html" class="nav-link">Logout</a>
+          </li>
+       </ul>
+       <button class="hamburger">
+         <a
+           href="#"
+           data-target="mobile-demo"
+           class="sidenav-trigger show-on-large">
+           <i class="menuIcon material-icons white-text">menu</i>
+           <i class="closeIcon material-icons">close</i>
+         </a>
+       </button>
+        <div id="top-logo" class="logo center black white-text">InstaShoe</div>
+        <input
+          id="searchbar_input"
+          name="searchbar_input"
+          type="text"
+          placeholder="Search"
+          class="col s9 offset-s1"
+        />
+        <i class="material-icons white-text search_icon" id="search_icon_click"
+          >search</i>
+  </header>
+    <div id="top-logo" class="logo center black white-text">InstaShoe</div>
+    <div class="login-container">
+      <form action="#">
+        <ul>
+          <label for="reg-username">Create username:</label>
+          <input
+            type="text"
+            id="reg-username"
+            name="reg-username"
+          /><br /><br />
+          <label for="email">Enter email address:</label>
+          <input type="text" id="email" name="email" /><br /><br />
+          <label for="password">Create password:</label>
+          <input
+            type="text"
+            id="reg-password"
+            name="reg-password"
+          /><br /><br />
+          <button id="button-sign-up">Submit</button>
+        </ul>
+      </form>
+    </div>
+  </body>
+
+  <script src="/javascript/login.js"></script>
+</html>

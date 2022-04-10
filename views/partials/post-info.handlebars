@@ -1,0 +1,26 @@
+{{!-- display post --}}
+<div class="body-img">
+    <div class="body-sections-img">
+        <div class="post-img">
+            <img src="{{file_src}}" alt="" style="max-width: 30rem; margin-top: 5rem;" />
+        </div>
+        <div class="img-info-description">
+            <p class="img-info-text">
+                <span style="font-weight: bold; font-size: 20px">{{username}}</span><br></br>
+                <span style="font-weight: bold">{{post_title}}</span><br> {{post_description}}<br></br>
+                <span style="font-weight: bold">Amount: </span>${{price}}
+            </p>
+            
+        </div>
+        <div class="post-btns" data-post-id="{{id}}">
+            <span hidden class="purchase_amount">{{price}}</span>
+            <span hidden class="user_id">{{current_user_id}}</span>
+            <span hidden class="post_id">{{id}}</span>
+            <span hidden class="post_user_id">{{user.id}}</span>
+            <button type="button" onclick="location.href = '/post/{{id}}'" class="comment-btn" id="btn-one">Comment</button>
+            <button type="button" onclick="location.href = '/paypal/{{id}}'" id="btn-one">Buy</button>
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascript/add-post.js"></script>

@@ -33,6 +33,10 @@ User.init(
         password: {
             type: DataTypes.STRING,
             allowNull: false,
+        },
+        file_src: {
+            type: DataTypes.STRING,
+            allowNull: true
         }
     },
     {

@@ -1,0 +1,18 @@
+{{!-- display sign-up page --}}
+<div class="login-container">
+  <form action="#">
+    <ul>
+      <label for="reg-username">Create username:</label>
+      <input type="text" id="reg-username" name="reg-username" /><br /><br />
+      <label for="email">Enter email address:</label>
+      <input type="text" id="email" name="email" /><br /><br />
+      <label for="password">Create password:</label>
+      <input type="text" id="reg-password" name="reg-password" /><br /><br />
+      <form id="new-post-form" method="POST" action="/api/images/(user.file_src)" enctype="multipart/form-data">Upload a photo
+        <input type="file" name="image" accept="image/*" />
+       <button id="button-sign-up" onclick="('going to comment page')">Submit</button>
+    </ul>
+  </form>
+</div>
+
+<script src="/javascript/login.js"></script>

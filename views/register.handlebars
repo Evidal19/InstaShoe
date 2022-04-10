@@ -1,0 +1,26 @@
+{{!-- display sign-up page --}}
+
+<div class="login-container">
+  <form id="submit-form" >
+    <ul>
+      <label for="username">Create username:</label>
+      <input type="text" id="username" name="username" /><br /><br />
+
+      <label for="email">Enter email address:</label>
+      <input type="text" id="email" name="email" /><br /><br />
+
+      <label for="password">Create password:</label>
+      <input type="text" id="password" name="password" /><br /><br />
+
+      Upload a photo 
+      <input type="file" id="imageInput" accept="image/*" /> 
+      
+      <input type="submit" id="button-sign-up">
+      </form>
+    </ul>
+  </form>
+  <p>Already have an account? <a href="/login">Login Here</a></p>
+</div>
+</body>
+
+<script src="/javascript/register.js"></script> 

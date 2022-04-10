@@ -1,0 +1,18 @@
+<div id="delete-img">
+    <div style="margin-top: 4rem;">
+        <h1>Delete Post</h1>
+    </div>
+    
+    <div style="delete-container">
+        <form id="delete-form" method="POST" action="/api/posts" enctype="multipart/form-data">
+        
+        <input type="file" name="image" accept="image/*" />
+
+        <input type="text" name="delete_title" id="delete_title">
+        <label for="delete_title"><strong>Delete description</strong> </label>
+
+        </form>
+    </div>
+</div>
+
+<script src="/javascript/delete-post.js"></script>

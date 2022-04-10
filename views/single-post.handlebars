@@ -1,0 +1,39 @@
+{{!-- display form --}}
+<ol class="post-list">
+    <div class="body-img" action="#" style="margin-top: 6rem">
+        <div class="body-sections-img">
+            <img id="pic-4" src="{{post_data.file_src}}" alt="male black,blue and white Nikes" />
+        </div>
+
+        <div class="img-info-description">
+            <p class="img-info-text">
+                <span style="font-weight: bold; font-size: 20px">{{post_data.user.username}}</span><br></br>
+                <span style="font-weight: bold">{{post_data.post_title}}</span> {{post_data.post_description}}<br></br>
+                <span style="font-weight: bold">Amount: <span style="font-weight: normal">${{post_data.price}}</span></span>
+            </p>
+        </div>
+        {{#if loggedIn}}
+        <div class="new-comment">
+            <div>
+                <form >
+                    <label for="comment">Comment on this post</label>
+                    <input name="comment" id="comment"></input>
+                    <button class="add-comment"  id="btn-one">Add comment</button>
+                    <span hidden class="post-id">{{post_data.id}}</span>
+                    <span hidden class="user-id">{{post_data.user.id}}</span>
+                </form>
+            </div>
+        </div>
+        {{else}}
+        <div class="prevent-post">
+            <p>You need to be logged in to post comments. <a href="/login">Login Here</a></p>
+        </div>
+        {{/if}}
+    </div>
+    {{#each post_data.comments as |post|}}
+    <li>
+        {{> comments post }}
+    </li>
+    {{/each}}
+</ol>
+<script src="/javascript/add-comment.js"></script>
